@@ -8,6 +8,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+li {
+  margin-bottom: 1.45rem;
+}
+li ul {
+  margin-bottom: 1.45rem;
+}
+
+/* 
 article,
 aside,
 details,
@@ -508,9 +517,6 @@ dt {
 th {
   font-weight: bold;
 }
-li {
-  margin-bottom: calc(1.45rem / 2);
-}
 ol li {
   padding-left: 0;
 }
@@ -518,11 +524,6 @@ ul li {
   padding-left: 0;
 }
 li > ol {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
-}
-li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
@@ -619,4 +620,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */
