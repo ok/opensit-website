@@ -22,9 +22,9 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="container">
         <main>{children}</main>
-        <footer>
-          Built in {new Date().getFullYear()} with love in Berlin!
-        </footer>
+          <footer class="nav">
+
+          </footer>
       </div>
     </>
   )

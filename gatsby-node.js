@@ -1,5 +1,12 @@
 const path = require(`path`)
 
+exports.onCreateNode = ({ node, getNode }) => {
+  if (node.internal.type === `SitePage`) {
+    const pageNode = getNode(node.parent)
+    // console.log(`\n`, node)
+  }
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 

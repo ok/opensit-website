@@ -5,9 +5,9 @@ import Moment from 'moment';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { getYtThumbnailUrl } from "../components/yt-helper.js"
 
 const IndexPage = ({data}) => (
-
   <Layout>
     <SEO title="Home" />
     <div className="row">
@@ -16,22 +16,23 @@ const IndexPage = ({data}) => (
       </div>
     </div>
     {data.gcms.events.map(event => (
-    <div className="row">
+    <div className="row" style={{"margin-bottom" : "1rem"}} key={event.id}>
       <div className="col-3 mb-3">
         <div className="card">
           <div className="card-body">
-            <Link to={event.insideTrack.hashtag}><h5 className="card-title">{event.insideTrack.name}</h5></Link>
+            <Link to={`/${event.insideTrack.hashtag}`}><h5 className="card-title">{event.insideTrack.name}</h5></Link>
           </div>
           <div className="card-footer">
-              <small class="text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</small>
+              <small className="text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</small>
           </div>
         </div>
       </div>
       <div className="card-deck col-9">
       {event.sessions.map(session => (
-        <div style={{width: `33%`,}}>
-          <div className="card card-body">
-            <p className="card-text">{session.title}</p>
+        <div className="card" style={{width: `33%`,}} key={session.id}>
+          <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
+          <div className="card-body" key={session.id}>
+              <p className="card-text"><small className="text-muted">{session.title}</small></p>
           </div>
         </div>
       ))}
