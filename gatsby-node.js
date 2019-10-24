@@ -3,7 +3,7 @@ const path = require(`path`)
 exports.onCreateNode = ({ node, getNode }) => {
   if (node.internal.type === `SitePage`) {
     const pageNode = getNode(node.parent)
-    // console.log(`\n`, node)
+    console.log(`\n`, node)
   }
 }
 
@@ -33,70 +33,102 @@ exports.createPages = ({ graphql, actions }) => {
   //   `).then(result => {
   // sessionsData.forEach(printSession)
 
-  const sessionsData = [
+  var sessionsData = [
     {
       "id": "ck0fr9r495b4s0b20ka238xwx",
       "title": "Handcuffed, blindfolded… what now?!",
       "speaker": "Bart van de Kamp, Soumalya Nath",
+      "recordingUrl": "https://www.youtube.com/embed/5GaISNTyyyM",
       "slidesUrl": null,
-      "recordingUrl": "https://www.youtube.com/watch?v=5GaISNTyyyM",
+      "slug": "handcuffed-blindfolded-what-now",
       "event": {
-        "date": "2019-08-31T00:00:00.000Z",
-        "location": "SAP DATA SPACE",
         "insideTrack": {
-          "name": "SAP Inside Track Berlin",
-          "hashtag": "sitBER",
-          "country": "DE",
-          "city": "Berlin",
-          "websiteUrl": "https://sitberlin.net"
-        }
+          "hashtag": "sitBER"
+        },
+        "date": "2019-08-31T00:00:00.000Z"
       }
     },
     {
       "id": "ck0frs79xi4qy0b592llp8v1v",
       "title": "Design thinking as a tool for SAP Activate workshops",
       "speaker": "Anne Johnson ",
+      "recordingUrl": "https://www.youtube.com/embed/ew5VoJCslKA",
       "slidesUrl": null,
-      "recordingUrl": "https://www.youtube.com/watch?v=ew5VoJCslKA",
+      "slug": "design-thinking-as-a-tool-for-sap-activate-workshops",
       "event": {
-        "date": "2019-08-31T00:00:00.000Z",
-        "location": "SAP DATA SPACE",
         "insideTrack": {
-          "name": "SAP Inside Track Berlin",
-          "hashtag": "sitBER",
-          "country": "DE",
-          "city": "Berlin",
-          "websiteUrl": "https://sitberlin.net"
-        }
+          "hashtag": "sitBER"
+        },
+        "date": "2019-08-31T00:00:00.000Z"
       }
     },
     {
       "id": "ck0fu762j5l3z0b20tuk5vy7n",
       "title": "Building the RIGHT it before you build it RIGHT",
       "speaker": "Tudor Riscutia",
+      "recordingUrl": "https://www.youtube.com/embed/RkyiZbEfa_I",
       "slidesUrl": null,
-      "recordingUrl": "https://www.youtube.com/watch?v=RkyiZbEfa_I",
+      "slug": "building-the-right-it-before-you-build-it-right",
       "event": {
-        "date": "2019-08-31T00:00:00.000Z",
-        "location": "SAP DATA SPACE",
         "insideTrack": {
-          "name": "SAP Inside Track Berlin",
-          "hashtag": "sitBER",
-          "country": "DE",
-          "city": "Berlin",
-          "websiteUrl": "https://sitberlin.net"
-        }
+          "hashtag": "sitBER"
+        },
+        "date": "2019-08-31T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "ck0jnu48ligfm0b38t6rx1zxb",
+      "title": "All That You Know Is At An End",
+      "speaker": "Paul Hardy",
+      "recordingUrl": "https://www.youtube.com/embed/aPIbAQwMpQs",
+      "slidesUrl": null,
+      "slug": "all-that-you-know-is-at-an-end",
+      "event": {
+        "insideTrack": {
+          "hashtag": "sitPOTT"
+        },
+        "date": "2019-05-25T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "ck0jnx6rziegr0b20pa5rlzhp",
+      "title": "Easy Install of SAP IQ database",
+      "speaker": "Roland Kramer",
+      "recordingUrl": "https://www.youtube.com/embed/yNa6c9cp_wo",
+      "slidesUrl": null,
+      "slug": "easy-install-of-sap-iq-database",
+      "event": {
+        "insideTrack": {
+          "hashtag": "sitPOTT"
+        },
+        "date": "2019-05-25T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "ck0lapnlqn73d0b04no5bn7om",
+      "title": "Insights into blockchain consensus mechanisms and their threats",
+      "speaker": "Andrea Pham",
+      "recordingUrl": "https://www.youtube.com/embed/XX-pLhww5tE",
+      "slidesUrl": null,
+      "slug": "insight-into-blockchain-consensus-mechanisms-and-their-threats",
+      "event": {
+        "insideTrack": {
+          "hashtag": "sitBER"
+        },
+        "date": "2019-08-31T00:00:00.000Z"
       }
     }
   ]
 
+
+  
   console.log("processing sessions...")
   // enrich data
   sessionsData.forEach(session => {
     sessionDate = new Date(session.event.date)
     session.event.year = sessionDate.getFullYear()
     session.event.path = `/${session.event.insideTrack.hashtag}/${session.event.year}`
-    session.path = `/${session.event.insideTrack.hashtag}/${session.event.year}/${session.id}`
+    session.path = `/${session.event.insideTrack.hashtag}/${session.event.year}/${session.slug}`
     // printSession(session)
   })
   // create pages
@@ -108,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  // query allSessionsQuery {
+  // query allEventsQuery {
   //   gcms {
   //     events {
   //       id

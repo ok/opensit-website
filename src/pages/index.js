@@ -17,7 +17,8 @@ const IndexPage = ({data}) => (
     </div>
     {data.gcms.events.map(event => (
     <div className="row" style={{"margin-bottom" : "1rem"}} key={event.id}>
-      <div className="col-3 mb-3">
+      <div className="col-lg-3 col-md-12">
+        <div class="card-group">
         <div className="card">
           <div className="card-body">
             <Link to={`/${event.insideTrack.hashtag}`}><h5 className="card-title">{event.insideTrack.name}</h5></Link>
@@ -26,10 +27,11 @@ const IndexPage = ({data}) => (
               <small className="text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</small>
           </div>
         </div>
+        </div>
       </div>
-      <div className="card-deck col-9">
+      <div className="card-deck col-lg-9 col-md-12">
       {event.sessions.map(session => (
-        <div className="card" style={{width: `33%`,}} key={session.id}>
+        <div className="card card-custom-style" key={session.id}>
           <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
           <div className="card-body" key={session.id}>
               <p className="card-text"><small className="text-muted">{session.title}</small></p>
