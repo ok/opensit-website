@@ -14,7 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise(resolve => {
     graphql(`
     {
-      allSessionPage:gcms {
+      allSessions:gcms {
         sessions {
           id
           title
@@ -40,6 +40,13 @@ exports.createPages = ({ graphql, actions }) => {
           events {
             location
             date
+            sessions {
+              id
+              title
+              speaker
+              recordingUrl
+              slug
+            }
           }
         }
       }
@@ -49,10 +56,10 @@ exports.createPages = ({ graphql, actions }) => {
           date
           location
           insideTrack {
+            id
             city
             country
             hashtag
-            id
             name
             websiteUrl
           }
@@ -63,7 +70,8 @@ exports.createPages = ({ graphql, actions }) => {
 
       console.log("processing sessions...")
       // printSession(result.data)
-      result.data.allSessionPage.sessions.forEach((session) => {
+      result.data.allSessions.sessions.forEach((session) => {
+        // printSession(session)
         sessionDate = new Date(session.event.date)
         session.event.year = sessionDate.getFullYear()
         createPage({
@@ -76,6 +84,7 @@ exports.createPages = ({ graphql, actions }) => {
       console.log("processing insideTracks...")
       // printSession(result.data)
       result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
+        printSession(insideTrack)
         createPage({
           path: `/${insideTrack.hashtag}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
