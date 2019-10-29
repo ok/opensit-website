@@ -69,7 +69,6 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
 
       console.log("processing sessions...")
-      // printSession(result.data)
       result.data.allSessions.sessions.forEach((session) => {
         // printSession(session)
         sessionDate = new Date(session.event.date)
@@ -82,9 +81,8 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       console.log("processing insideTracks...")
-      // printSession(result.data)
       result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
-        printSession(insideTrack)
+        // printSession(insideTrack)
         createPage({
           path: `/${insideTrack.hashtag}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
