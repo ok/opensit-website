@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { getYtThumbnailUrl } from "../components/yt-helper.js"
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <div className="row">

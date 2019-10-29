@@ -13,7 +13,6 @@ const Header = ({ siteTitle }) => (
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <Link to="/" className="nav-item nav-link">Home</Link>
-            <Link to="/insidetracks" className="nav-item nav-link">Inside Tracks</Link>
             <Link to="/about" className="nav-item nav-link">About</Link>
           </div>
           <div className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
