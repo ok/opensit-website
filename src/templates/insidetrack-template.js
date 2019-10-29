@@ -8,9 +8,9 @@ export default ({ pageContext: { insideTrack } }) => (
     <SEO title="Inside Track Event" />
     <h1>{insideTrack.name}</h1>
     <section>
-      <ul class="list-group list-group-flush">
+      <ul className="list-group list-group-flush">
         {insideTrack.events.map(event => (
-          <li class="list-group-item" key={event.id}>
+          <li className="list-group-item" key={event.id}>
             <p></p>
             <p>{event.location}</p>
             <Link to={`/${insideTrack.path}/${event.year}`}>{event.date}</Link>
