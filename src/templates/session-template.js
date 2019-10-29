@@ -16,6 +16,11 @@ export default ({ pageContext: { session } }) => {
       <p>{session.speaker}</p>
       <Link to={`${session.event.path}`}>{session.event.insideTrack.name}</Link>
       <iframe title={session.title} width="560" height="315" src={session.recordingUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div>Topics: 
+      {session.topics.map((item, index) => (
+        <span>{item} </span>
+      ))}
+    </div>
     </Layout>
   )
 }

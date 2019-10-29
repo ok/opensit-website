@@ -22,6 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
           recordingUrl
           slidesUrl
           slug
+          topics
           event {
             insideTrack {
               hashtag
