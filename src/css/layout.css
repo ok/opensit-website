@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+  font-family: ari;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -12,8 +12,45 @@ body {
 li {
   margin-bottom: 1.45rem;
 }
+
 li ul {
   margin-bottom: 1.45rem;
+}
+
+.card.ok-card {
+  width: 100%;
+  flex: auto 0 100%;
+}
+
+@media (min-width: 576px) {
+  .card.ok-card {
+    width: 50%;
+    margin-bottom:15px;
+    flex: 2 0 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card.ok-card {
+    width: 33%;
+    margin-bottom:15px;
+    flex: auto 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .card.ok-card {
+    width: 25%;
+    margin-bottom:15px;
+    flex: 1 0;
+  }
+}
+
+.ok-title {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+  font-weight: 500;
 }
 
 .card-deck .card.card-custom-style {
@@ -44,6 +81,7 @@ li ul {
     max-width: 176px;
   } 
 }
+
 /* 
 article,
 aside,
