@@ -66,7 +66,7 @@ export const query = graphql`
           name
           websiteUrl
         }
-        sessions {
+        sessions(first: 4) {
           title
           speaker
           id
