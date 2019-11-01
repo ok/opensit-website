@@ -39,6 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
           websiteUrl
           hashtag
           events {
+            id
             location
             date
             sessions {

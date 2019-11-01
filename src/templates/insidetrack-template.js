@@ -30,14 +30,14 @@ export default ({ pageContext: { insideTrack } }) => {
         </div>
         <div className="card-deck col-lg-9 col-md-12">
         {event.sessions.map(session => (
-          <Link to={`/${insideTrack.hashtag}/${event.year}/${session.slug}`} key={session.id}>
-            <div className="card card-custom-style">
-              <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
-              <div className="card-body">
-                  <p className="card-text"><small className="text-muted">{session.title}</small></p>
-              </div>
+        <Link to={`/${insideTrack.hashtag}/${event.year}/${session.slug}`} key={session.id}>
+          <div className="card card-custom-style">
+            <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
+            <div className="card-body">
+                <p className="card-text"><small className="text-muted">{session.title}</small></p>
             </div>
-          </Link>
+          </div>
+        </Link>
         ))}
         </div>
       </div>

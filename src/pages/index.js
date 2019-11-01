@@ -36,12 +36,15 @@ const IndexPage = ({ data }) => {
         <div className="col-sm-12 col-md-9">
           <div className="card-deck">
           {event.sessions.map(session => (
+          /* @Colin this Link tag fucks up the layout :( */
+          /*<Link to={`/${event.insideTrack.hashtag}/${event.year}/${session.slug}`} key={session.id}>*/
             <div className="card ok-card " key={session.id}>
               <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
               <div className="card-body" key={session.id}>
                   <p className="card-text"><small className="text-muted">{session.title}</small></p>
               </div>
             </div>
+          /*</Link>*/
           ))}
           </div>
         </div>
