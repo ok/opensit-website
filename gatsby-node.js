@@ -31,6 +31,14 @@ exports.createPages = ({ graphql, actions }) => {
           country
           websiteUrl
           hashtag
+          logo {
+            url(
+              transformation: {
+                image: { resize: { width: 100, height: 100, fit: scale } }
+              }
+            )
+            mimeType
+          }
           events(orderBy: date_DESC) {
             id
             location

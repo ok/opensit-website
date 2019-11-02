@@ -14,9 +14,18 @@ export default ({ pageContext: { insideTrack } }) => {
   return (
     <Layout>
       <SEO title="Inside Track Event" />
-      <div className="row">
-        <div className="col-12">
-          <h2>{insideTrack.name}</h2>
+      <div className="card-group">
+        <div className="card col-2" style={{"marginBottom" : "1rem"}}>
+          <div className="card-body">
+            <img src={insideTrack.logo.url} alt="inside track logo"></img>
+          </div>
+        </div>
+        <div className="card col-10" style={{"marginBottom" : "1rem"}}>
+          <div className="card-body">
+            <h2>{insideTrack.name}</h2>
+            <p>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></p>
+            <p>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></p>
+          </div>
         </div>
       </div>
       {insideTrack.events.map(event => (

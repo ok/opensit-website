@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import { getSlug } from "../components/helper.js"
+import { getYtEmbedUrl, getSlug } from "../components/helper.js"
 
 export default ({ pageContext: { session } }) => {
   var sessionDate = new Date(session.event.date)
@@ -14,10 +14,10 @@ export default ({ pageContext: { session } }) => {
       <SEO title="Session" />
       <h1>{session.title}</h1>
       <p>{session.speaker} at <Link to={`${session.event.path}`}>{session.event.insideTrack.name} {session.event.year}</Link></p>
-      <iframe title={session.title} width="560" height="315" src={session.recordingUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-      <div>Topics: 
+      <iframe title={session.title} width="560" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div>
       {session.topics.map((item, index) => (
-        <span>{item} </span>
+        <span className="badge badge-primary">{item} </span>
       ))}
     </div>
     </Layout>
