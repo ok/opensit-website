@@ -72,7 +72,6 @@ exports.createPages = ({ graphql, actions }) => {
       console.log("processing sessions...")
       result.data.allSessions.sessions.forEach((session) => {
         // printData(session)
-        printData(getSlug(session.event.insideTrack.hashtag))
         sessionDate = new Date(session.event.date)
         session.event.year = sessionDate.getFullYear()
         createPage({
