@@ -23,11 +23,11 @@ exports.createPages = ({ graphql, actions }) => {
           slidesUrl
           topics
           event {
+            date
             insideTrack {
               name
               hashtag
             }
-            date
           }
         }
       }
