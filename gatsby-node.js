@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
           country
           websiteUrl
           hashtag
-          events {
+          events(orderBy: date_DESC) {
             id
             location
             date
