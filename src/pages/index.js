@@ -5,7 +5,7 @@ import Moment from 'moment';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { getYtThumbnailUrl } from "../components/helper.js"
+import { getYtThumbnailUrl, getSlug } from "../components/helper.js"
 
 const IndexPage = ({ data }) => {
   data.gcms.events.forEach(event => {
@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
         <div className="col-sm-12 col-md-3 mb-3">
           <div className="card">
             <div className="card-body">
-              <Link to={`/${event.insideTrack.hashtag}`}><h5 className="card-title ok-title">{event.insideTrack.name}</h5></Link>
+              <Link to={`/${getSlug(event.insideTrack.hashtag)}`}><h5 className="card-title ok-title">{event.insideTrack.name}</h5></Link>
             </div>
             <div className="card-footer">
                 <small className="text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</small>
@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
           <div className="card-deck">
           {event.sessions.map(session => (
           /* @Colin this Link tag fucks up the layout :( */
-          /*<Link to={`/${event.insideTrack.hashtag}/${event.year}/${ getSlug(session.title) }`} key={session.id}>*/
+          /*<Link to={`/${getSlug(event.insideTrack.hashtag)}/${event.year}/${ getSlug(session.title) }`} key={session.id}>*/
             <div className="card ok-card " key={session.id}>
               <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
               <div className="card-body" key={session.id}>

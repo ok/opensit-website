@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
           topics
           event {
             insideTrack {
+              name
               hashtag
             }
             date
@@ -70,11 +71,12 @@ exports.createPages = ({ graphql, actions }) => {
 
       console.log("processing sessions...")
       result.data.allSessions.sessions.forEach((session) => {
-        // printSession(session)
+        // printData(session)
+        printData(getSlug(session.event.insideTrack.hashtag))
         sessionDate = new Date(session.event.date)
         session.event.year = sessionDate.getFullYear()
         createPage({
-          path: `/${session.event.insideTrack.hashtag}/${session.event.year}/${ getSlug(session.title) }`,
+          path: `/${getSlug(session.event.insideTrack.hashtag)}/${session.event.year}/${ getSlug(session.title) }`,
           component: require.resolve(`./src/templates/session-template.js`),
           context: { session },
         })
@@ -82,20 +84,20 @@ exports.createPages = ({ graphql, actions }) => {
 
       console.log("processing insideTracks...")
       result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
-        // printSession(insideTrack)
+        // printData(insideTrack)
         createPage({
-          path: `/${insideTrack.hashtag}`,
+          path: `/${getSlug(insideTrack.hashtag)}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
           context: { insideTrack },
         })
       })
 
       console.log("processing events...")
-      // printSession(result.data)
+      // printData(result.data)
       result.data.allEvents.events.forEach(event => {
         eventDate = new Date(event.date)
         event.year = eventDate.getFullYear()
-        event.path = `/${event.insideTrack.hashtag}/${event.year}`
+        event.path = `/${getSlug(event.insideTrack.hashtag)}/${event.year}`
       })
       result.data.allEvents.events.forEach(event => {
         createPage({
@@ -109,13 +111,12 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-//gatsby-node.js doesn't support 
-function printSession(data) {
+// gatsby-node doesn't support component import, which sucks!
+function printData(data) {
   console.log(JSON.stringify(data))
   console.log("---END---")
 }
 
-// gatsby-node doesn't support component import, which sucks!
 // figure out how this ESM import works https://github.com/gatsbyjs/gatsby/issues/10391
 // copy from helper.js
 function getSlug(title) {
