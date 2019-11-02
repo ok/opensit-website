@@ -11,7 +11,7 @@ export function getYtVideoId(url) {
 }
 
 export function getYtEmbedUrl(url) {
-  return "http://www.youtube.com/embed/" + getYtVideoId(url) + "?rel=0";
+  return "https://www.youtube.com/embed/" + getYtVideoId(url) + "?rel=0";
 }
 
 export function getYtThumbnailUrl(url) {
