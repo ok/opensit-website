@@ -5,7 +5,7 @@ import Moment from 'moment';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { getYtThumbnailUrl } from "../components/yt-helper.js"
+import { getYtThumbnailUrl } from "../components/helper.js"
 
 const IndexPage = ({ data }) => {
   data.gcms.events.forEach(event => {
@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
           <div className="card-deck">
           {event.sessions.map(session => (
           /* @Colin this Link tag fucks up the layout :( */
-          /*<Link to={`/${event.insideTrack.hashtag}/${event.year}/${session.slug}`} key={session.id}>*/
+          /*<Link to={`/${event.insideTrack.hashtag}/${event.year}/${ getSlug(session.title) }`} key={session.id}>*/
             <div className="card ok-card " key={session.id}>
               <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
               <div className="card-body" key={session.id}>
@@ -74,7 +74,6 @@ export const query = graphql`
           speaker
           id
           recordingUrl
-          slug
           topics
         }
       }

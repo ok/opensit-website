@@ -21,7 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
           speaker
           recordingUrl
           slidesUrl
-          slug
           topics
           event {
             insideTrack {
@@ -47,7 +46,6 @@ exports.createPages = ({ graphql, actions }) => {
               title
               speaker
               recordingUrl
-              slug
             }
           }
         }
@@ -76,7 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
         sessionDate = new Date(session.event.date)
         session.event.year = sessionDate.getFullYear()
         createPage({
-          path: `/${session.event.insideTrack.hashtag}/${session.event.year}/${session.slug}`,
+          path: `/${session.event.insideTrack.hashtag}/${session.event.year}/${ getSlug(session.title) }`,
           component: require.resolve(`./src/templates/session-template.js`),
           context: { session },
         })
@@ -111,7 +109,29 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
+//gatsby-node.js doesn't support 
 function printSession(data) {
   console.log(JSON.stringify(data))
   console.log("---END---")
+}
+
+// gatsby-node doesn't support component import, which sucks!
+// figure out how this ESM import works https://github.com/gatsbyjs/gatsby/issues/10391
+// copy from helper.js
+function getSlug(title) {
+  title = title.replace(/^\s+|\s+$/g, ''); // trim
+  title = title.toLowerCase();
+
+  // remove accents, swap ñ for n, etc
+  var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+  var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+  for (var i=0, l=from.length ; i<l ; i++) {
+    title = title.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+
+  title = title.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+    .replace(/-+/g, '-'); // collapse dashes
+
+  return title;
 }

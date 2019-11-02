@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Moment from 'moment';
 import { Link } from "gatsby"
-import { getYtThumbnailUrl } from "../components/yt-helper.js"
+import { getYtThumbnailUrl, getSlug } from "../components/helper.js"
 
 export default ({ pageContext: { insideTrack } }) => {
   insideTrack.events.forEach(event => {
@@ -30,7 +30,7 @@ export default ({ pageContext: { insideTrack } }) => {
         </div>
         <div className="card-deck col-lg-9 col-md-12">
         {event.sessions.map(session => (
-        <Link to={`/${insideTrack.hashtag}/${event.year}/${session.slug}`} key={session.id}>
+        <Link to={`/${insideTrack.hashtag}/${event.year}/${ getSlug(session.title) }`} key={session.id}>
           <div className="card card-custom-style">
             <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
             <div className="card-body">
