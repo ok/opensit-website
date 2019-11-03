@@ -19,7 +19,7 @@ li ul {
 
 .card.ok-card {
   width: 100%;
-  flex: auto 0 100%;
+  flex: 1 1 auto;
 }
 
 @media (min-width: 576px) {
@@ -34,7 +34,7 @@ li ul {
   .card.ok-card {
     width: 33%;
     margin-bottom:15px;
-    flex: auto 0;
+    flex: 1 1 auto;
   }
 }
 
@@ -56,19 +56,23 @@ li ul {
 .card-deck .card.card-custom-style {
   width:100%;
   min-width: 150px;
-} 
+}
+
+.ok-inside-track-date {
+  margin-bottom:12px;
+}
 
 @media screen and (min-width:420px){
   .card-deck .card.card-custom-style {
     width:100%;
-    min-width: px;
+    margin-left:8px;
+    margin-right: 0;
   } 
 }
 
 @media screen and (min-width:720px){
   .card-deck .card.card-custom-style {
-    width:10%;
-    max-width: 170px;
+    width: 50%;
     margin-left:8px;
     margin-right: 8px;
   } 
@@ -76,9 +80,8 @@ li ul {
 
 @media screen and (min-width:960px){
   .card-deck .card.card-custom-style {
-    width:25%;
     min-width: 150px;
-    max-width: 176px;
+    max-width:23%;
   } 
 }
 
@@ -152,6 +155,7 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+    
 }
 sub {
   bottom: -0.25em;
