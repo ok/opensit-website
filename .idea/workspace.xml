@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f962b123-6d2f-4ff8-84ea-5214bb65cea0" name="Default Changelist" comment="">
+    <list default="true" id="032d0ef1-77a5-43d3-bf4d-e52117da754a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/insidetrack-template.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/insidetrack-template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/session-template.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/session-template.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +18,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1T75sw91a8zJq8iJZXPDLoTe0S8" />
+  <component name="ProjectId" id="1TFm6vcC4ERL05NMv8WYMZpgwNl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\colin\projects\opensit\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,12 +45,15 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f962b123-6d2f-4ff8-84ea-5214bb65cea0" name="Default Changelist" comment="" />
-      <created>1572798503667</created>
+      <changelist id="032d0ef1-77a5-43d3-bf4d-e52117da754a" name="Default Changelist" comment="" />
+      <created>1573064045901</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572798503667</updated>
-      <workItem from="1572798506380" duration="302000" />
+      <updated>1573064045901</updated>
+      <workItem from="1573064050534" duration="322000" />
+      <workItem from="1573064393415" duration="43000" />
+      <workItem from="1573064450307" duration="2176000" />
+      <workItem from="1573066653659" duration="4109000" />
     </task>
     <servers />
   </component>
@@ -60,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

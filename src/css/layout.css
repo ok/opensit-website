@@ -20,6 +20,7 @@ li ul {
 .card.ok-card {
   width: 100%;
   flex: 1 1 auto;
+  border:0;
 }
 
 @media (min-width: 576px) {
@@ -33,6 +34,7 @@ li ul {
 @media (min-width: 768px) {
   .card.ok-card {
     width: 33%;
+    max-width:330px;
     margin-bottom:15px;
     flex: 1 1 auto;
   }
