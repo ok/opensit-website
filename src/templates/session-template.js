@@ -12,14 +12,19 @@ export default ({ pageContext: { session } }) => {
   return (
     <Layout>
       <SEO title="Session" />
-      <h1>{session.title}</h1>
-      <p>{session.speaker} at <Link to={`${session.event.path}`}>{session.event.insideTrack.name} {session.event.year}</Link></p>
-      <iframe title={session.title} width="560" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-      <div>
-      {session.topics.map((item, index) => (
-        <span className="badge badge-primary">{item} </span>
-      ))}
-    </div>
+      <div className="row">
+        <div className="col-sm-12">
+          <h1>{session.title}</h1>
+          <p>{session.speaker} at <Link to={`${session.event.path}`}>{session.event.insideTrack.name} {session.event.year}</Link></p>
+          <iframe title={session.title} width="560" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          <div>
+            {session.topics.map((item, index) => (
+              <span className="badge badge-primary">{item} </span>
+            ))}
+          </div>
+        </div>
+      </div>
+     
     </Layout>
   )
 }
