@@ -14,23 +14,25 @@ export default ({ pageContext: { insideTrack } }) => {
   return (
     <Layout>
       <SEO title="Inside Track Event" />
-      <div className="card-group">
-        <div className="card col-sm-4 col-md-3 col-lg-2" style={{"marginBottom" : "1rem"}}>
-          <div className="card-body">
-            <img src={insideTrack.logo.url} alt="inside track logo"></img>
+      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top">
+        <div className="row">
+          <div className="col-sm-2 col-md-3 col-lg-3" style={{"marginBottom" : "1rem"}}>
+            <div className="insideTrack-logo">
+              <img src={insideTrack.logo.url} alt="inside track logo"></img>
+            </div>
+          </div>
+          <div className="col-sm-8 col-md-9 col-lg-9">
+            <div className="">
+              <h2>{insideTrack.name}</h2>
+              <div>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></div>
+              <div>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></div>
+            </div>
           </div>
         </div>
-        <div className="card col-sm-8 col-md-9 col-lg-12" style={{"marginBottom" : "1rem"}}>
-          <div className="card-body">
-            <h2>{insideTrack.name}</h2>
-            <p>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></p>
-            <p>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></p>
-          </div>
-        </div>
-      </div>
-     
+      </nav>
+
       {insideTrack.events.map(event => (
-      <div className="row" style={{"marginBottom" : "1rem"}} key={event.id}>
+      <div className="row mt-4" style={{"marginBottom" : "1rem"}} key={event.id}>
         <div className="ok-inside-track-date col-sm-12 col-md-3">
           <div className="card-group">
             <div className="card">
