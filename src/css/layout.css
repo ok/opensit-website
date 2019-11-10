@@ -28,34 +28,6 @@ li ul {
   max-width: 60px;
 }
 
-@media (min-width: 576px) {
-    .card.ok-card {
-        width: 50%;
-        margin-bottom: 15px;
-        flex: 2 0 50%;
-    }
-}
-
-@media (min-width: 768px) {
-    .card.ok-card {
-        width: 33%;
-        max-width: 330px;
-        margin-bottom: 15px;
-        flex: 1 1 auto;
-    }
-    .insideTrack-logo img{
-        max-width: 120px;
-    }
-}
-
-@media (min-width: 992px) {
-    .card.ok-card {
-        width: 25%;
-        margin-bottom: 15px;
-        flex: 1 0;
-    }
-}
-
 .ok-title {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
@@ -66,33 +38,42 @@ li ul {
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 0;
+    width: 100%;
+    flex: 1 1 auto;
+    border: 0;
 }
-
 .ok-inside-track-date {
     margin-bottom: 12px;
 }
-
-@media screen and (min-width: 420px) {
-    .card-deck .card.card-custom-style {
-        width: 100%;
-        margin-left: 8px;
-        margin-right: 0;
-    }
+.card-deck.card-deck-custom-style {
+    margin-left: 0;
+    margin-right: 0;
 }
-
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 760px) {
     .card-deck .card.card-custom-style {
-        width: 50%;
-        margin-left: 8px;
-        margin-right: 8px;
+        width: 30%;
+        max-width: 30%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .insideTrack-logo img{
+        max-width: 120px;
+    }
+    .card-deck.card-deck-custom-style {
+        margin-left: -8px;
+        margin-right:-8px;
     }
 }
 
 @media screen and (min-width: 960px) {
     .card-deck .card.card-custom-style {
         min-width: 150px;
-        max-width: 23%;
+        max-width: 18%;
     }
+
 }
 
 /* 
