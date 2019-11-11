@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
-import { graphql } from 'gatsby';
 import Moment from 'moment';
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { getYtThumbnailUrl, getSlug } from "../components/helper.js"
+import Video from "../components/video"
+import { getSlug } from "../components/helper.js"
 
 const IndexPage = ({ data }) => {
   data.gcms.events.forEach(event => {
@@ -37,14 +37,13 @@ const IndexPage = ({ data }) => {
             <div className="col-sm-12 col-md-12">
               <div className="card-deck">
                 {event.sessions.map(session => (
-                  <div className="card ok-card " key={session.id}>
-                    <Link to={`/${getSlug(event.insideTrack.hashtag)}/${event.year}/${ getSlug(session.title) }`} key={session.id}>
-                      <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
-                      <div className="card-body p-0 pt-1" key={session.id}>
-                        <p className="card-text"><span className="text-muted font-weight-bolder">{session.title}</span></p>
-                      </div>
-                    </Link>
-                  </div>
+                  <Video.Player
+                    sessionId = {session.id}
+                    sessionTitle = {session.title}
+                    sessionUrl = {session.recordingUrl}
+                    hashtag = {event.insideTrack.hashtag}
+                    eventYear = {event.year}
+                  />
                 ))}
               </div>
             </div>
@@ -71,12 +70,12 @@ export const query = graphql`
           name
           websiteUrl
           logo {
-              url(
-                  transformation: {
-                      image: { resize: { width: 30, height: 30, fit: scale } }
-                  }
-              )
-              mimeType
+            url(
+              transformation: {
+                image: { resize: { width: 30, height: 30, fit: scale } }
+              }
+            )
+            mimeType
           }
         }
         sessions(first: 5) {
