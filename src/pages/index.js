@@ -22,31 +22,27 @@ const IndexPage = ({ data }) => {
       </div>
       {data.gcms.events.map(event => (
       <div className="row mb-5" key={event.id}>
-        <div className="col">
-          <div className="row mb-3 px-3 pt-2">
+        <div className="col-sm-12">
+          <div className="row mb-4 px-3 pt-2">
             <div className="d-inline-flex d-flex align-items-center">
               <div className=""><img src={event.insideTrack.logo.url} alt="inside track logo"></img></div >
-              <div className="px-3 "><Link to={`/${getSlug(event.insideTrack.hashtag)}`}>{event.insideTrack.name}</Link></div>
+              <div className="px-3"><h4 className={"mb-1"}><Link className={"text-dark"} to={`/${getSlug(event.insideTrack.hashtag)}`}>{event.insideTrack.name}</Link></h4></div>
               <div className="text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</div>
             </div>
             <div className="d-flex ml-auto">
               <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
             </div>
           </div>
-          <div className="row">
-            <div className="col-sm-12 col-md-12">
-              <div className="card-deck">
-                {event.sessions.map(session => (
-                  <Video.Player
-                    sessionId = {session.id}
-                    sessionTitle = {session.title}
-                    sessionUrl = {session.recordingUrl}
-                    hashtag = {event.insideTrack.hashtag}
-                    eventYear = {event.year}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="card-deck card-deck-custom-style mb-4">
+            {event.sessions.map(session => (
+            <Video.Player
+              sessionId = {session.id}
+              sessionTitle = {session.title}
+              sessionUrl = {session.recordingUrl}
+              hashtag = {event.insideTrack.hashtag}
+              eventYear = {event.year}
+            />
+          ))}
           </div>
         </div>
       </div>
