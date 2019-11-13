@@ -36,3 +36,8 @@ export function getSlug(title) {
 
   return title;
 }
+
+// credits: https://stackoverflow.com/questions/8206269/how-to-remove-http-from-a-url-in-javascript
+export function getDisplayUrl(url) {
+  return url.replace(/(^\w+:|^)\/\//, '');
+}

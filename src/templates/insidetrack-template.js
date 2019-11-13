@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Moment from 'moment';
 import Video from "../components/video"
+import { getDisplayUrl } from "../components/helper.js"
 
 export default ({ pageContext: { insideTrack } }) => {
   insideTrack.events.forEach(event => {
@@ -22,8 +23,8 @@ export default ({ pageContext: { insideTrack } }) => {
           </div>
           <div className="col-sm-10 col-md-9">
             <h2>{insideTrack.name}</h2>
-            <div>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></div>
-            <div>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></div>
+            <span><a href={insideTrack.websiteUrl}>{getDisplayUrl(insideTrack.websiteUrl)}</a></span> |&nbsp; 
+            <span><a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></span>
           </div>
         </div>
       </nav>
