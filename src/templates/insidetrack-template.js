@@ -2,8 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Moment from 'moment';
-import { Link } from "gatsby"
-import { getYtThumbnailUrl, getSlug } from "../components/helper.js"
+import Video from "../components/video"
 
 export default ({ pageContext: { insideTrack } }) => {
   insideTrack.events.forEach(event => {
@@ -22,9 +21,9 @@ export default ({ pageContext: { insideTrack } }) => {
             </div>
           </div>
           <div className="col-sm-10 col-md-9">
-              <h2>{insideTrack.name}</h2>
-              <div>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></div>
-              <div>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></div>
+            <h2>{insideTrack.name}</h2>
+            <div>website: <a href={insideTrack.websiteUrl}>{insideTrack.websiteUrl}</a></div>
+            <div>hashtag: <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></div>
           </div>
         </div>
       </nav>
@@ -34,25 +33,20 @@ export default ({ pageContext: { insideTrack } }) => {
         <div className={"col-sm-12"}>
           <div  className="row mt-4 mb-2">
             <div className="ok-inside-track-date col-sm-12">
-              <div className="">
-                <div className="">
-                  <h5 className="">Date: {Moment(event.date).format('D MMM YYYY')}</h5>
-                </div>
-              </div>
+              <h5 className="">Date: {Moment(event.date).format('D MMM YYYY')}</h5>
             </div>
           </div>
-            <div className="card-deck card-deck-custom-style">
-              {event.sessions.map(session => (
-                <div className="card card-custom-style mb-4">
-                  <Link to={`/${getSlug(insideTrack.hashtag)}/${event.year}/${ getSlug(session.title) }`} key={session.id}>
-                    <img className="card-img-top" src={ getYtThumbnailUrl(session.recordingUrl) } alt="Video thumbnail"/>
-                    <div className="card-body p-0 pt-1">
-                      <p className="card-text text-muted">{session.title}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+          <div className="card-deck card-deck-custom-style">
+          {event.sessions.map(session => (
+          <Video.Player
+            sessionId = {session.id}
+            sessionTitle = {session.title}
+            sessionUrl = {session.recordingUrl}
+            hashtag = {insideTrack.hashtag}
+            eventYear = {event.year}
+          />
+          ))}
+          </div>
         </div>
       </div>
       ))}

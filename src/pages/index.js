@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
     <SEO title="Home" />
-        <div className="row mb-3">
+      <div className="row mb-3">
         <div className="col-12">
           <h2>Recent SAP Inside Tracks</h2>
         </div>
