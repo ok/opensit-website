@@ -55,16 +55,6 @@ exports.createPages = ({ graphql, actions }) => {
       allEvents:gcms {
         events {
           id
-          date
-          location
-          insideTrack {
-            id
-            city
-            country
-            hashtag
-            name
-            websiteUrl
-          }
         }
       }
     }
@@ -78,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: `/${getSlug(session.event.insideTrack.hashtag)}/${session.event.year}/${ getSlug(session.title) }`,
           component: require.resolve(`./src/templates/session-template.js`),
-          context: { session },
+          context: { session }
         })
       })
 
@@ -88,24 +78,28 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: `/${getSlug(insideTrack.hashtag)}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
-          context: { insideTrack },
+          context: { insideTrack }
         })
       })
 
       console.log("processing events...")
       // printData(result.data)
-      result.data.allEvents.events.forEach(event => {
-        eventDate = new Date(event.date)
-        event.year = eventDate.getFullYear()
-        event.path = `/${getSlug(event.insideTrack.hashtag)}/${event.year}`
-      })
-      result.data.allEvents.events.forEach(event => {
+      const events = result.data.allEvents.events;
+      const eventsPerPage = 4;
+      const numPages = Math.ceil(events.length / eventsPerPage);
+
+      Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-          path: `${event.path}`,
-          component: require.resolve(`./src/templates/event-template.js`),
-          context: { event },
-        })
-      })
+          path: i === 0 ? `/` : `/p/${i + 1}`,
+          component: path.resolve('./src/templates/events-template.js'),
+          context: {
+            limit: eventsPerPage,
+            skip: i * eventsPerPage,
+            numPages,
+            currentPage: i + 1
+          }
+        });
+      });
       resolve();
     })
   })
