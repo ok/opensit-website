@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, actions }) => {
       console.log("processing events...")
       // printData(result.data)
       const events = result.data.allEvents.events;
-      const eventsPerPage = 2;
+      const eventsPerPage = 4;
       const numPages = Math.ceil(events.length / eventsPerPage);
 
       Array.from({ length: numPages }).forEach((_, i) => {
