@@ -9,7 +9,11 @@ import Pagination from "../components/pagination"
 import { getSlug } from "../components/helper.js"
 
 const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
-  
+  data.gcms.events.forEach(event => {
+    var eventDate = new Date(event.date)
+    event.year = eventDate.getFullYear()
+  })
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -19,7 +23,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
         </div>
       </div>
       {data.gcms.events.map(event => (
-      <div className="row mb-5" key={event.id}>
+      <div className="row mb-2" key={event.id}>
         <div className="col-sm-12">
           <div className="row mb-4 px-3 pt-2">
             <div className="d-inline-flex d-flex align-items-center">
