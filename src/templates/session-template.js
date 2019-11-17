@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { getYtEmbedUrl, getSlug } from "../components/helper.js"
 
 export default ({ pageContext: { session } }) => {
-  var sessionDate = new Date(session.event.date)
+  const sessionDate = new Date(session.event.date)
   session.event.year = sessionDate.getFullYear()
   session.event.path = `/${getSlug(session.event.insideTrack.hashtag)}`
 
@@ -24,7 +24,7 @@ export default ({ pageContext: { session } }) => {
           </div>
         </div>
       </div>
-     
+
     </Layout>
   )
 }

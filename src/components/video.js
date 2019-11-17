@@ -16,9 +16,9 @@ const Player = (props: Props) => {
 
   return (
     <div className="card card-custom-style mb-4" key={sessionId}>
-    <Link to={`/${getSlug(hashtag)}/${eventYear}/${ getSlug(sessionTitle) }`} key={sessionId}>
+    <Link to={`/${getSlug(hashtag)}/${eventYear}/${ getSlug(sessionTitle) }`}>
       <img className="card-img-top" src={ getYtThumbnailUrl(sessionUrl) } alt="Video thumbnail"/>
-      <div className="card-body p-0 pt-1" key={sessionId}>
+      <div className="card-body p-0 pt-1">
         <p className="card-text text-muted">{sessionTitle}</p>
       </div>
     </Link>
