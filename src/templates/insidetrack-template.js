@@ -5,9 +5,11 @@ import Moment from 'moment';
 import Video from "../components/video"
 import { getDisplayUrl } from "../components/helper.js"
 
-export default ({ pageContext: { insideTrack } }) => {
+const InsideTrackPage = ({ data }) => {
+  const insideTrack = data.gcms.insideTrack
+
   insideTrack.events.forEach(event => {
-    var eventDate = new Date(event.date)
+    const eventDate = new Date(event.date)
     event.year = eventDate.getFullYear()
   })
 
@@ -54,3 +56,39 @@ export default ({ pageContext: { insideTrack } }) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query singleTrack($id: ID!) {
+    gcms {
+      insideTrack(
+        where: {id: $id}
+      ) {
+        name
+        city
+        country
+        websiteUrl
+        hashtag
+        logo {
+          url(
+            transformation: {
+              image: { resize: { width: 100, height: 100, fit: scale } }
+            }
+          )
+          mimeType
+        }
+        events(orderBy: date_DESC) {
+          id
+          location
+          date
+          sessions {
+            id
+            title
+            speaker
+            recordingUrl
+          }
+        }
+      }
+    }
+  }
+`
+export default InsideTrackPage

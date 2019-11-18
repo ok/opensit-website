@@ -3,7 +3,6 @@ const path = require(`path`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  console.log("processing sessions promise...")
   return new Promise(resolve => {
     graphql(`
     {
@@ -11,14 +10,9 @@ exports.createPages = ({ graphql, actions }) => {
         sessions {
           id
           title
-          speaker
-          recordingUrl
-          slidesUrl
-          topics
           event {
             date
             insideTrack {
-              name
               hashtag
             }
           }
@@ -26,30 +20,8 @@ exports.createPages = ({ graphql, actions }) => {
       }
       allInsideTracks:gcms {
         insideTracks {
-          name
-          city
-          country
-          websiteUrl
+          id
           hashtag
-          logo {
-            url(
-              transformation: {
-                image: { resize: { width: 100, height: 100, fit: scale } }
-              }
-            )
-            mimeType
-          }
-          events(orderBy: date_DESC) {
-            id
-            location
-            date
-            sessions {
-              id
-              title
-              speaker
-              recordingUrl
-            }
-          }
         }
       }
       allEvents:gcms {
@@ -60,30 +32,31 @@ exports.createPages = ({ graphql, actions }) => {
     }
     `).then(result => {
 
-      console.log("processing sessions...")
-      result.data.allSessions.sessions.forEach((session) => {
-        // printData(session)
-        sessionDate = new Date(session.event.date)
-        session.event.year = sessionDate.getFullYear()
-        createPage({
-          path: `/${getSlug(session.event.insideTrack.hashtag)}/${session.event.year}/${ getSlug(session.title) }`,
-          component: require.resolve(`./src/templates/session-template.js`),
-          context: { session }
-        })
-      })
-
       console.log("processing insideTracks...")
       result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
-        // printData(insideTrack)
         createPage({
           path: `/${getSlug(insideTrack.hashtag)}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
-          context: { insideTrack }
+          context: { 
+            id: insideTrack.id 
+          }
+        })
+      })
+
+      console.log("processing sessions...")
+      result.data.allSessions.sessions.forEach((session) => {
+        const sessionDate = new Date(session.event.date)
+        createPage({
+          // /sitber/2019/some_session_title
+          path: `/${getSlug(session.event.insideTrack.hashtag)}/${sessionDate.getFullYear()}/${ getSlug(session.title) }`,
+          component: require.resolve(`./src/templates/session-template.js`),
+          context: { 
+            id: session.id
+          }
         })
       })
 
       console.log("processing events...")
-      // printData(result.data)
       const events = result.data.allEvents.events;
       const eventsPerPage = 4;
       const numPages = Math.ceil(events.length / eventsPerPage);
@@ -105,12 +78,6 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-// gatsby-node doesn't support component import, which sucks!
-function printData(data) {
-  console.log(JSON.stringify(data))
-  console.log("---END---")
-}
-
 // figure out how this ESM import works https://github.com/gatsbyjs/gatsby/issues/10391
 // copy from helper.js
 function getSlug(title) {
@@ -129,4 +96,10 @@ function getSlug(title) {
     .replace(/-+/g, '-'); // collapse dashes
 
   return title;
+}
+
+// gatsby-node doesn't support component import, which sucks!
+function printData(data) {
+  console.log(JSON.stringify(data))
+  console.log("---END---")
 }
