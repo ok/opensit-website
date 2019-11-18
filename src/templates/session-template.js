@@ -4,7 +4,9 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { getYtEmbedUrl, getSlug } from "../components/helper.js"
 
-export default ({ pageContext: { session } }) => {
+const SessionPage = ({ data }) => {
+  const session = data.gcms.session
+  
   const sessionDate = new Date(session.event.date)
   session.event.year = sessionDate.getFullYear()
   session.event.path = `/${getSlug(session.event.insideTrack.hashtag)}`
@@ -28,3 +30,27 @@ export default ({ pageContext: { session } }) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query singleSession($id: ID!) {
+    gcms {
+      session(
+        where: {id: $id}
+      ) {
+        title
+        speaker
+        recordingUrl
+        slidesUrl
+        topics
+        event {
+          date
+          insideTrack {
+            name
+            hashtag
+          }
+        }
+      }
+    }
+  }
+`
+export default SessionPage
