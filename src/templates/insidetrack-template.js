@@ -7,7 +7,6 @@ import { getDisplayUrl } from "../components/helper.js"
 
 const InsideTrackPage = ({ data }) => {
   const insideTrack = data.gcms.insideTrack
-
   insideTrack.events.forEach(event => {
     const eventDate = new Date(event.date)
     event.year = eventDate.getFullYear()

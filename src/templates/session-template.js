@@ -6,10 +6,7 @@ import { getYtEmbedUrl, getSlug } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
   const session = data.gcms.session
-  
   const sessionDate = new Date(session.event.date)
-  session.event.year = sessionDate.getFullYear()
-  session.event.path = `/${getSlug(session.event.insideTrack.hashtag)}`
 
   return (
     <Layout>
@@ -17,16 +14,15 @@ const SessionPage = ({ data }) => {
       <div className="row">
         <div className="col-sm-12">
           <h1>{session.title}</h1>
-          <p>{session.speaker} at <Link to={`${session.event.path}`}>{session.event.insideTrack.name} {session.event.year}</Link></p>
+          <p>{session.speaker} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
           <iframe title={session.title} width="560" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <div>
             {session.topics.map((item, index) => (
-              <span className="badge badge-primary">{item} </span>
+              <span className="badge badge-primary" key={item}>{item} </span>
             ))}
           </div>
         </div>
       </div>
-
     </Layout>
   )
 }
@@ -34,9 +30,8 @@ const SessionPage = ({ data }) => {
 export const query = graphql`
   query singleSession($id: ID!) {
     gcms {
-      session(
-        where: {id: $id}
-      ) {
+      session(where: {id: $id}) 
+      {
         title
         speaker
         recordingUrl
