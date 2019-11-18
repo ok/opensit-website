@@ -1,7 +1,9 @@
 import React from "react"
+import Moment from 'moment'
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Moment from 'moment';
 import Video from "../components/video"
 import { getDisplayUrl } from "../components/helper.js"
 
