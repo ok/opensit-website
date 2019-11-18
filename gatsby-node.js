@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
     `).then(result => {
 
-      console.log("processing insideTracks...")
+      // console.log("processing insideTracks...")
       result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
         createPage({
           path: `/${getSlug(insideTrack.hashtag)}`,
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      console.log("processing sessions...")
+      // console.log("processing sessions...")
       result.data.allSessions.sessions.forEach((session) => {
         const sessionDate = new Date(session.event.date)
         createPage({
@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
 
-      console.log("processing events...")
+      // console.log("processing events...")
       const events = result.data.allEvents.events;
       const eventsPerPage = 4;
       const numPages = Math.ceil(events.length / eventsPerPage);
@@ -95,11 +95,5 @@ function getSlug(title) {
     .replace(/\s+/g, '-') // collapse whitespace and replace by -
     .replace(/-+/g, '-'); // collapse dashes
 
-  return title;
-}
-
-// gatsby-node doesn't support component import, which sucks!
-function printData(data) {
-  console.log(JSON.stringify(data))
-  console.log("---END---")
+    return title;
 }
