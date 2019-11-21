@@ -6,22 +6,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
 import { getDisplayUrl } from "../components/helper.js"
+import { getYtVideoId } from "../components/helper"
 
-function scrollFunction() {
-  var element = document.getElementById("navBar")
+export function setStickyNav() {
+  let element = document.getElementById("navBar")
   if (element !== null)  {
     if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       element.classList.add("stickyActive");
     } else {
-      var element = document.getElementById("navBar")
+      let element = document.getElementById("navBar")
       element.classList.remove("stickyActive");
     }
   }
 }
 
-window.onscroll = function() {
-  scrollFunction();
-}
 
 const InsideTrackPage = ({ data }) => {
   const insideTrack = data.gcms.insideTrack
