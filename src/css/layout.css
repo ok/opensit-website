@@ -21,64 +21,221 @@ body {
     background-color: #f5f5f5;
 }
 
-.card.ok-card {
-    width: 100%;
-    flex: 1 1 auto;
-    border: 0;
+.stickyActive {
+    padding-bottom:12px;
+    box-shadow:  0 8px .30rem -4px rgba(120, 120, 120, 0.62);
 }
 
-.insideTrack-logo img{
-    max-width: 60px;
+.stickyActive .insideTrack-logoWrapper {
+    padding-right:0;
+    margin-bottom:0;
 }
 
-.ok-title {
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #444444;
-    font-weight: 500;
+.stickyActive .insideTrack-logoWrapper img {
+    max-width:80px;
+}
+
+.stickyActive .insideTrack-title {
+    font-size: 24px;
+}
+
+.insideTrack-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.insideTrack-navBar {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.insideTrack-desktop-hidden {
+    display: flex;
+}
+
+.insideTrack-mobile-hidden {
+    display: none;
 }
 
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
-    margin-left: 0px;
-    margin-right: 0px;
     border: 0;
-    width: 100%;
     flex: 1 1 auto;
-    border: 0;
+    margin: 0 2px 32px 2px;
 }
-.ok-inside-track-date {
-    margin-bottom: 12px;
-}
+
 .card-deck.card-deck-custom-style {
     margin-left: 0;
     margin-right: 0;
+    justify-content: flex-start;
 }
-@media screen and (min-width: 760px) {
-    .card-deck .card.card-custom-style {
-        width: 30%;
-        max-width: 30%;
-        margin-left: 10px;
-        margin-right: 10px;
+
+.card-deck .card.card-custom-style:last-child {
+    margin: 0 10px 0 10px;
+}
+
+.navbar.sticky-top {
+    padding:0;
+}
+
+.event-info {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.event-title-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left:20px;
+}
+
+.event-header {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 5px;
+    margin-bottom:20px;
+}
+
+.event-logo {
+    max-width:40px;
+    padding-top:2px;
+    margin-right:4px;
+}
+.event-logo img {
+    width:45px;
+    height:45px;
+}
+.event-title {
+    margin:0 0 2px 0;
+    line-height: 1;
+}
+.event-title h4, .event-title a{
+    margin:0;
+    line-height: 1;
+    vertical-align: top;
+}
+.event-date {
+    margin:0 0 0 0;
+}
+.event-wrapper {
+    margin-top:20px;
+}
+.insideTrack-identity {
+    display: flex;
+    flex-flow: row nowrap;
+    width:100%;
+    max-width:1140px;
+    margin: 0 auto;
+    padding:10px 20px;
+}
+
+.insideTrack-logoWrapper {
+    max-width: 120px;
+    width:100%;
+}
+
+.insideTrack-titleWrapper {
+    width:100%;
+    margin-left:8px;
+}
+
+.insideTrack-date {
+    margin-bottom: 12px;
+    justify-content: space-between;
+    margin-left:-4px;
+}
+
+.insideTrack-card-deck {
+    justify-content: flex-start;
+}
+
+@media screen and (min-width:480px) {
+    .stickyActive {
+        padding-bottom:12px;
+        box-shadow:  0 8px .30rem -4px rgba(120, 120, 120, 0.62);
     }
+    .insideTrack-identity {
+        display: flex;
+        flex-flow: row nowrap;
+        width:100%;
+    }
+    .insideTrack-logoWrapper {
+        max-width: 120px;
+        width:20%;
+        margin-left:0;
+        padding-left:0;
+
+    }
+    .insideTrack-titleWrapper {
+        width:85%;
+        margin-left:8px;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .card-deck.card-deck-custom-style {
+        justify-content: space-between;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .card-deck .card.card-custom-style {
+        flex: 1 0 auto;
+        max-width:46%;
+        margin: 0 10px 20px 10px;
+    }
+    .card-deck .card.card-custom-style:last-child {
+        margin: 0 10px 0 10px;
+    }
+
     .insideTrack-logo img{
         max-width: 120px;
     }
-    .card-deck.card-deck-custom-style {
-        margin-left: -8px;
-        margin-right:-8px;
+    .insideTrack-view-more{
+        max-width: 120px;
     }
 }
 
 @media screen and (min-width: 960px) {
+    .event-wrapper {
+        margin-top:8px;
+    }
+    .card-deck.card-deck-custom-style {
+        justify-content: flex-start;
+    }
+    .card-deck .card.card-custom-style {
+        min-width: 150px;
+        max-width:31%;
+        margin-left: 10px;
+        margin-right: 10px;
+
+    }
+    .os-desktop-hidden {
+        display: none;
+    }
+    .os-mobile-hidden {
+        display: flex;
+    }
+
+}
+
+
+@media screen and (min-width:1024px) {
     .card-deck .card.card-custom-style {
         min-width: 150px;
         max-width: 18%;
     }
 
-}
+    .card-deck.insideTrack {
+        justify-content: flex-start;
+    }
+    .card-deck.card-deck-custom-style {
+        justify-content: space-between;
+    }
 
+}
 .pagination {
     justify-content: center;
     padding-bottom: 1.45rem;
