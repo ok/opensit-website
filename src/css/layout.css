@@ -21,21 +21,35 @@ body {
     background-color: #f5f5f5;
 }
 
-.stickyActive {
+.ReactStickyHeader_root .ReactStickyHeader_fixed {
+    position:relative;
+    top:unset;
+    left: unset;
+    right:unset;
+}
+
+.ReactStickyHeader_root.is-sticky .ReactStickyHeader_fixed{
+    position:fixed;
+    top:0;
+    left: 0;
+    right:0;
+    z-index:100;
+}
+.ReactStickyHeader_root.is-sticky {
     padding-bottom:12px;
     box-shadow:  0 8px .30rem -4px rgba(120, 120, 120, 0.62);
 }
 
-.stickyActive .insideTrack-logoWrapper {
+.ReactStickyHeader_root.is-sticky .insideTrack-logoWrapper {
     padding-right:0;
     margin-bottom:0;
 }
 
-.stickyActive .insideTrack-logoWrapper img {
+.ReactStickyHeader_root.is-sticky .insideTrack-logoWrapper img {
     max-width:80px;
 }
 
-.stickyActive .insideTrack-title {
+.ReactStickyHeader_root.is-sticky .insideTrack-title {
     font-size: 24px;
 }
 
