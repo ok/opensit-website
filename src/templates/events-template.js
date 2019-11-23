@@ -37,7 +37,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                   </div >
 
                 </div>
-                <div className="event-view-more d-flex ml-auto">
+                <div className="event-view-more ml-auto insideTrack-mobile-hidden">
                   <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
                 </div>
               </div>
@@ -52,8 +52,8 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                   />
                 ))}
               </div>
-              <div className="row mb-5 px-3 pt-0 justify-content-end">
-                <div className="event-view-more os-desktop-hidden">
+              <div className="row mb-5 px-3 pt-0">
+                <div className="event-view-more insideTrack-desktop-hidden pl-2">
                   <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
                 </div>
               </div>
