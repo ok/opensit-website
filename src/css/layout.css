@@ -35,24 +35,33 @@ body {
     right:0;
     z-index:100;
 }
-.ReactStickyHeader_root.is-sticky {
-    padding-bottom:12px;
+.ReactStickyHeader_root .ReactStickyHeader_midground {
+    top:200px !important;
+}
+
+.ReactStickyHeader_root.is-sticky .navbar{
+    padding-bottom:4px;
     box-shadow:  0 8px .30rem -4px rgba(120, 120, 120, 0.62);
 }
 
 .ReactStickyHeader_root.is-sticky .insideTrack-logoWrapper {
     padding-right:0;
     margin-bottom:0;
+    width:auto;
+    margin-right:12px;
 }
 
 .ReactStickyHeader_root.is-sticky .insideTrack-logoWrapper img {
-    max-width:80px;
+    max-width:65px;
 }
 
 .ReactStickyHeader_root.is-sticky .insideTrack-title {
     font-size: 24px;
 }
 
+.insideTrack-title {
+    margin-bottom:2px;
+}
 .insideTrack-container {
     max-width: 1140px;
     margin: 0 auto;
@@ -151,12 +160,11 @@ body {
     width:100%;
     max-width:1140px;
     margin: 0 auto;
-    padding:10px 20px;
+    padding:10px 18px;
 }
 
 .insideTrack-logoWrapper {
     max-width: 120px;
-    width:100%;
 }
 
 .insideTrack-titleWrapper {
@@ -173,24 +181,26 @@ body {
 .insideTrack-card-deck {
     justify-content: flex-start;
 }
-
+.insideTrack-logoWrapper img {
+    padding-top:1px;
+}
+.insideTrack-identity {
+    display: flex;
+    flex-flow: row nowrap;
+    width:100%;
+    align-items: center;
+}
 @media screen and (min-width:480px) {
-    .stickyActive {
-        padding-bottom:12px;
-        box-shadow:  0 8px .30rem -4px rgba(120, 120, 120, 0.62);
-    }
-    .insideTrack-identity {
-        display: flex;
-        flex-flow: row nowrap;
-        width:100%;
-    }
+
     .insideTrack-logoWrapper {
-        max-width: 120px;
-        width:20%;
+        margin-right:20px;
         margin-left:0;
         padding-left:0;
-
     }
+    .insideTrack-logoWrapper img {
+        max-width:90px;
+    }
+
     .insideTrack-titleWrapper {
         width:85%;
         margin-left:8px;

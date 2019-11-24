@@ -20,7 +20,7 @@ const InsideTrackPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Inside Track Event" />
-      <MyHeader insideTrackTitle={getDisplayUrl( insideTrack.websiteUrl )} insideTrackLogoUrl={( insideTrack.logo.url )}>
+      <MyHeader displayURL={getDisplayUrl( insideTrack.websiteUrl )} insideTrackName={( insideTrack.name )} insideTrackHashtag={( insideTrack.hashtag)}  insideTrackLogoUrl={( insideTrack.logo.url)}>
 
       </MyHeader>
 

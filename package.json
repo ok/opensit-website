@@ -32,7 +32,6 @@
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "react-sticky": "^6.0.3",
     "react-sticky-header": "^0.2.0",
     "reactstrap": "^8.0.1"
   },
