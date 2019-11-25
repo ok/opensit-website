@@ -6,19 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
 import { getDisplayUrl } from "../components/helper.js"
-import { getYtVideoId } from "../components/helper"
-
-export function setStickyNav() {
-  let element = document.getElementById("navBar")
-  if (element !== null)  {
-    if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      element.classList.add("stickyActive");
-    } else {
-      let element = document.getElementById("navBar")
-      element.classList.remove("stickyActive");
-    }
-  }
-}
+import { getYtVideoId } from "../components/helper.js"
+import MyHeader from "../components/navbar"
 
 
 const InsideTrackPage = ({ data }) => {
@@ -31,20 +20,10 @@ const InsideTrackPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Inside Track Event" />
-      <nav id="navBar" className="navbar navbar-expand-lg bg-white navbar-light sticky-top ">
-        <div className="insideTrack-identity insideTrack-container">
-          <div className="insideTrack-logoWrapper">
-            <div className="insideTrack-logo">
-              <img src={insideTrack.logo.url} alt="inside track logo"></img>
-            </div>
-          </div>
-          <div className="insideTrack-titleWrapper">
-            <h2 className="insideTrack-title">{insideTrack.name}</h2>
-            <span><a href={insideTrack.websiteUrl}>{getDisplayUrl(insideTrack.websiteUrl)}</a></span> |&nbsp;
-            <span><a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a></span>
-          </div>
-        </div>
-      </nav>
+      <MyHeader displayURL={getDisplayUrl( insideTrack.websiteUrl )} insideTrackName={( insideTrack.name )} insideTrackHashtag={( insideTrack.hashtag)}  insideTrackLogoUrl={( insideTrack.logo.url)}>
+
+      </MyHeader>
+
       <div className="insideTrack-container">
         {insideTrack.events.map(event => (
           <div className="row mt-5" key={event.id}>
