@@ -1,13 +1,24 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import fab from "../images/40fab.png"
+import { Link } from "gatsby"
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ data }) => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="insideTrack-container">
+      <div className="row justify-content-center align-items-center" style={{marginTop: `3rem`,}}>
+        <div className="col col-lg-3">
+          <img src={fab} alt="Fabian"/>
+        </div>
+        <div className="col col-lg-5">
+          <h3>We couldn't find the page you are looking for.</h3>
+          <p>Here are some helpful links instead:</p>
+          <Link to={`/`}>Back to start</Link>
+        </div>
+      </div>   
+    </div>
   </Layout>
 )
 
