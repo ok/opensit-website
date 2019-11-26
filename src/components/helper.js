@@ -42,6 +42,10 @@ export function getDisplayUrl(url) {
   return url.replace(/(^\w+:|^)\/\//, '');
 }
 
+export function getDisplayName(name) {
+  return name.replace(/_/, ' ');
+}
+
 // gatsby-node doesn't support component import, which sucks!
 export function printData(data) {
   console.log(JSON.stringify(data))

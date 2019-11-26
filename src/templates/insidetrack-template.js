@@ -20,13 +20,13 @@ const InsideTrackPage = ({ data }) => {
     <Layout>
       <SEO title="Inside Track Event" />
       <MyHeader
-        displayURL={getDisplayUrl( insideTrack.websiteUrl )}
-        insideTrackName = {insideTrack.name}
-        insideTrackHashtag={( insideTrack.hashtag)}
-        insideTrackLogoUrl={( insideTrack.logo.url)}
+        displayURL = { getDisplayUrl(insideTrack.websiteUrl) }
+        insideTrackName = { insideTrack.name }
+        insideTrackHashtag = { insideTrack.hashtag }
+        insideTrackLogoUrl = { insideTrack.logo.url }
       />
       <div className="insideTrack-container">
-        {insideTrack.events.map(event => (
+        { insideTrack.events.map(event => (
           <div className="row mt-5" key={event.id}>
             <div className={"col-sm-12"}>
                 <div className="insideTrack-date">
