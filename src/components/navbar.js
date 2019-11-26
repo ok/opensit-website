@@ -1,9 +1,7 @@
 import React from "react"
-import Moment from 'moment'
 
 import 'react-sticky-header/styles.css';
 import StickyHeader from 'react-sticky-header';
-import PropTypes from "prop-types"
 
 const MyHeader = ({ displayURL, insideTrackName, insideTrackHashtag, insideTrackLogoUrl}) => {
 
@@ -21,7 +19,7 @@ const MyHeader = ({ displayURL, insideTrackName, insideTrackHashtag, insideTrack
             <div className="insideTrack-titleWrapper">
               <h2 className="insideTrack-title">{insideTrackName}</h2>
               <span><a href={displayURL}>{displayURL}</a></span> |&nbsp;
-              <span><a href="{`https://twitter.com/hashtag/${insideTrackHashtag}`}">#{insideTrackHashtag}</a></span>
+              <span><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
             </div>
           </div>
         </nav>
