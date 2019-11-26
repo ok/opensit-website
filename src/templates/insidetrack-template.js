@@ -5,7 +5,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
-import { getDisplayUrl } from "../components/helper.js"
 import MyHeader from "../components/navbar"
 
 
@@ -20,7 +19,7 @@ const InsideTrackPage = ({ data }) => {
     <Layout>
       <SEO title="Inside Track Event" />
       <MyHeader
-        displayURL = { getDisplayUrl(insideTrack.websiteUrl) }
+        insideTrackSiteUrl = { insideTrack.websiteUrl }
         insideTrackName = { insideTrack.name }
         insideTrackHashtag = { insideTrack.hashtag }
         insideTrackLogoUrl = { insideTrack.logo.url }

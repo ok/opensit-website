@@ -2,8 +2,9 @@ import React from "react"
 
 import 'react-sticky-header/styles.css';
 import StickyHeader from 'react-sticky-header';
+import { getDisplayUrl } from "../components/helper.js"
 
-const MyHeader = ({ displayURL, insideTrackName, insideTrackHashtag, insideTrackLogoUrl}) => {
+const MyHeader = ({ insideTrackSiteUrl, insideTrackName, insideTrackHashtag, insideTrackLogoUrl}) => {
 
   return (
     <StickyHeader
@@ -18,7 +19,7 @@ const MyHeader = ({ displayURL, insideTrackName, insideTrackHashtag, insideTrack
             </div>
             <div className="insideTrack-titleWrapper">
               <h2 className="insideTrack-title">{insideTrackName}</h2>
-              {displayURL.length !== 0 && (<span style={{marginRight: `0.7rem`,}}><a href={displayURL}>{displayURL}</a></span> )}
+              {insideTrackSiteUrl !== 0 && (<span style={{marginRight: `0.7rem`,}}><a href={insideTrackSiteUrl}>{getDisplayUrl(insideTrackSiteUrl)}</a></span> )}
               <span><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
             </div>
           </div>
