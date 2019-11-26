@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video"
 import { getDisplayUrl } from "../components/helper.js"
-import { getYtVideoId } from "../components/helper.js"
 import MyHeader from "../components/navbar"
 
 
@@ -20,12 +19,14 @@ const InsideTrackPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Inside Track Event" />
-      <MyHeader displayURL={getDisplayUrl( insideTrack.websiteUrl )} insideTrackName={( insideTrack.name )} insideTrackHashtag={( insideTrack.hashtag)}  insideTrackLogoUrl={( insideTrack.logo.url)}>
-
-      </MyHeader>
-
+      <MyHeader
+        displayURL = { getDisplayUrl(insideTrack.websiteUrl) }
+        insideTrackName = { insideTrack.name }
+        insideTrackHashtag = { insideTrack.hashtag }
+        insideTrackLogoUrl = { insideTrack.logo.url }
+      />
       <div className="insideTrack-container">
-        {insideTrack.events.map(event => (
+        { insideTrack.events.map(event => (
           <div className="row mt-5" key={event.id}>
             <div className={"col-sm-12"}>
                 <div className="insideTrack-date">
