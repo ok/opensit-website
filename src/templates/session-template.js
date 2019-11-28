@@ -3,11 +3,12 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
+import { getYtEmbedUrl, getSlug, getDisplayName, printData } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
-  const session = data.gcms.session
-  const sessionDate = new Date(session.event.date)
+  const session = data.gcms.session;
+  const sessionDate = new Date(session.event.date);
+  printData(data);
 
   return (
     <Layout>
@@ -17,7 +18,13 @@ const SessionPage = ({ data }) => {
           <div className="col-sm-12">
             <div className="insideTrack-videoWrapper">
               <h1>{session.title}</h1>
-              <p>{session.speaker} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
+              {session.speakers.length ? (
+                <p>{session.speakers.map((speaker, i) => ([
+                  i > 0 && " & ",<a href={`https://people.sap.com/`+speaker.scnName}>{speaker.firstName} {speaker.lastName}</a>] 
+                ))} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
+              ) : (
+                <p>{session.speaker} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
+              )}
               <iframe title={session.title} width="100%" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div>
                 {session.topics.map((item, index) => (
@@ -48,6 +55,12 @@ export const query = graphql`
             name
             hashtag
           }
+        }
+        speakers {
+          firstName
+          lastName
+          twitterId
+          scnName
         }
       }
     }
