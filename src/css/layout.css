@@ -65,6 +65,7 @@ body {
 
 .insideTrack-icon {
     margin-right: .5em;
+    margin-bottom: .1em;
     color: #212529;
 }
 
@@ -98,6 +99,13 @@ body {
     max-height:480px;
     display: flex;
     flex-flow: column nowrap;
+}
+
+.speaker-icon {
+    margin-left: .2em;
+    margin-right: .1em;
+    margin-bottom: .1em;
+    color: #212529;
 }
 
 .card-deck .card.card-custom-style {

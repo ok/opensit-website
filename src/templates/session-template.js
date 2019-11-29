@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Speaker from "../components/speaker"
 import { getYtEmbedUrl, getSlug, getDisplayName, printData } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
@@ -20,7 +21,7 @@ const SessionPage = ({ data }) => {
               <h1>{session.title}</h1>
               {session.speakers.length ? (
                 <p>{session.speakers.map((speaker, i) => ([
-                  i > 0 && " & ",<a href={`https://people.sap.com/`+speaker.scnName}>{speaker.firstName} {speaker.lastName}</a>] 
+                  i > 0 && " & ",<Speaker speaker={speaker} />]
                 ))} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
               ) : (
                 <p>{session.speaker} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
