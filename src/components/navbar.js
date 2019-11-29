@@ -19,7 +19,7 @@ const MyHeader = ({ insideTrackSiteUrl, insideTrackName, insideTrackHashtag, ins
             </div>
             <div className="insideTrack-titleWrapper">
               <h2 className="insideTrack-title">{insideTrackName}</h2>
-              {insideTrackSiteUrl !== 0 && (<span style={{marginRight: `0.7rem`,}}><a href={insideTrackSiteUrl}>{getDisplayUrl(insideTrackSiteUrl)}</a></span> )}
+              {insideTrackSiteUrl.length !== 0 && (<span style={{marginRight: `0.7rem`,}}><a href={insideTrackSiteUrl}>{getDisplayUrl(insideTrackSiteUrl)}</a></span> )}
               <span><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
             </div>
           </div>
