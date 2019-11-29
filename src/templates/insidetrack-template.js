@@ -23,6 +23,8 @@ const InsideTrackPage = ({ data }) => {
         insideTrackName = { insideTrack.name }
         insideTrackHashtag = { insideTrack.hashtag }
         insideTrackLogoUrl = { insideTrack.logo.url }
+        insideTrackTwitterId = { insideTrack.twitterId }
+        insideTrackYoutubeUrl = { insideTrack.youTubeUrl }
       />
       <div className="insideTrack-container">
         { insideTrack.events.map(event => (
@@ -60,6 +62,8 @@ export const query = graphql`
         city
         country
         websiteUrl
+        twitterId
+        youTubeUrl
         hashtag
         logo {
           url(

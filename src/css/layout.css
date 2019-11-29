@@ -60,8 +60,18 @@ body {
 }
 
 .insideTrack-title {
-    margin-bottom:2px;
+    margin-bottom: .3em;
 }
+
+.insideTrack-icon {
+    margin-right: .5em;
+    color: #212529;
+}
+
+.insideTrack-icon-hashtag {
+    color: #212529;
+}
+
 .insideTrack-container {
     max-width: 1140px;
     margin: 0 auto;
