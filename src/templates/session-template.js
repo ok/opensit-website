@@ -18,14 +18,11 @@ const SessionPage = ({ data }) => {
         <div className="row">
           <div className="col-sm-12">
             <div className="insideTrack-videoWrapper">
+              <span>{session.speakers.map((speaker, i) => ([
+                i > 0 && " & ",<Speaker speaker={speaker} />]
+              ))}</span>
               <h1>{session.title}</h1>
-              {session.speakers.length ? (
-                <p>{session.speakers.map((speaker, i) => ([
-                  i > 0 && " & ",<Speaker speaker={speaker} />]
-                ))} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
-              ) : (
-                <p>{session.speaker} at <Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
-              )}
+              <p><Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
               <iframe title={session.title} width="100%" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div>
                 {session.topics.map((item, index) => (

@@ -25,7 +25,7 @@ const MyHeader = ({
               </div>
             </div>
             <div className="insideTrack-titleWrapper">
-              <h2 className="insideTrack-title">{insideTrackName}</h2>
+              <h3 className="insideTrack-title">{insideTrackName}</h3>
               <IconContext.Provider value={{ className: "insideTrack-icon" }}>
                 {insideTrackTwitterId !== null && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
               </IconContext.Provider>

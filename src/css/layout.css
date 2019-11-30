@@ -209,6 +209,16 @@ body {
     width:100%;
     align-items: center;
 }
+
+.speaker-icon {
+    margin-bottom: .2em;
+    margin-left: .3em;
+    margin-right: .3em;
+    width: 1.0em;
+    height: 1.0em;
+    color: #38A1F3;
+}
+
 @media screen and (min-width:480px) {
 
     .insideTrack-logoWrapper {
