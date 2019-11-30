@@ -64,7 +64,7 @@ body {
     min-width: 150px;
     border: 0;
     flex: 1 1 auto;
-    margin: 0 2px 32px 2px;
+    margin: 20px 2px 0px 2px;
 }
 
 .card-deck.card-deck-custom-style {
@@ -74,7 +74,7 @@ body {
 }
 
 .card-deck .card.card-custom-style:last-child {
-    margin: 0 10px 0 10px;
+    /* margin: 0 10px 0 10px; */
 }
 
 .navbar.sticky-top {
@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 5px;
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
 }
 
 .event-logo {

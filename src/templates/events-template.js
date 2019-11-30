@@ -53,7 +53,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                 ))}
               </div>
               <div className="row mb-5 px-3 pt-0">
-                <div className="event-view-more insideTrack-desktop-hidden pl-2">
+                <div className="event-view-more insideTrack-desktop-hidden">
                   <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
                 </div>
               </div>
