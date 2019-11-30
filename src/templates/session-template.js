@@ -4,12 +4,11 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Speaker from "../components/speaker"
-import { getYtEmbedUrl, getSlug, getDisplayName, printData } from "../components/helper.js"
+import { getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
   const session = data.gcms.session;
   const sessionDate = new Date(session.event.date);
-  printData(data);
 
   return (
     <Layout>
