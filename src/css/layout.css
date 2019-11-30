@@ -64,7 +64,7 @@ body {
     min-width: 150px;
     border: 0;
     flex: 1 1 auto;
-    margin: 20px 2px 0px 2px;
+    margin: 28px 2px 0px 2px;
 }
 
 .card-deck.card-deck-custom-style {
@@ -96,7 +96,7 @@ body {
     display: flex;
     flex-flow: row nowrap;
     margin: 0 5px;
-    /* margin-bottom:20px; */
+    margin-bottom:10px;
 }
 
 .event-logo {
@@ -228,6 +228,9 @@ body {
 }
 
 @media screen and (min-width:480px) {
+    .event-header {
+        margin-bottom:0px;
+    }
 
     .insideTrack-logoWrapper {
         margin-right:20px;
@@ -245,6 +248,10 @@ body {
 }
 
 @media screen and (min-width: 760px) {
+    .event-header {
+        margin-bottom:20px;
+    }
+
     .card-deck.card-deck-custom-style {
         justify-content: space-between;
         margin-left: -8px;
@@ -256,8 +263,8 @@ body {
         max-width:46%;
         margin: 0 10px 20px 10px;
     }
-    .card-deck .card.card-custom-style:last-child {
-        margin: 0 10px 0 10px;
+    .card-deck .card.card-custom-style:first-child {
+        margin: 0 0px 0 0px;
     }
 
     .insideTrack-logo img{
@@ -280,7 +287,6 @@ body {
         max-width:31%;
         margin-left: 10px;
         margin-right: 10px;
-
     }
     .insideTrack-desktop-hidden {
         display: none;
