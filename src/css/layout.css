@@ -135,11 +135,6 @@ body {
     color: #212529;
 }
 
-.insideTrack-icon-link {
-    width: 1.2em;
-    height: 1.2em;
-}
-
 .insideTrack-icon-hashtag {
     width: 1.0em;
     height: 1.0em;
@@ -167,8 +162,8 @@ body {
 .insideTrack-videoWrapper {
     max-width:560px;
     width:auto;
-    height:480px;
-    max-height:480px;
+    height:560px;
+    max-height:560px;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -208,6 +203,19 @@ body {
     flex-flow: row nowrap;
     width:100%;
     align-items: center;
+}
+
+.twitter-icon {
+    color: #38A1F3;
+}
+
+.youtube-icon {
+    color: #FF0000;
+}
+
+.link-icon {
+    width: 1.2em;
+    height: 1.2em;
 }
 
 .speaker-icon {

@@ -26,14 +26,14 @@ const MyHeader = ({
             </div>
             <div className="insideTrack-titleWrapper">
               <h3 className="insideTrack-title">{insideTrackName}</h3>
-              <IconContext.Provider value={{ className: "insideTrack-icon" }}>
-                {insideTrackTwitterId !== null && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
+              <IconContext.Provider value={{ className: "insideTrack-icon twitter-icon" }}>
+                {insideTrackTwitterId !== null && insideTrackTwitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
               </IconContext.Provider>
-              <IconContext.Provider value={{ className: "insideTrack-icon" }}>
-                {insideTrackYoutubeUrl !== 0 && (<a href={insideTrackYoutubeUrl}><FaYoutube/></a>)}
+              <IconContext.Provider value={{ className: "insideTrack-icon youtube-icon" }}>
+                {insideTrackYoutubeUrl !== null && insideTrackYoutubeUrl.length !== 0 && (<a href={insideTrackYoutubeUrl}><FaYoutube/></a>)}
               </IconContext.Provider>
-              <IconContext.Provider value={{ className: "insideTrack-icon insideTrack-icon-link" }}>
-                {insideTrackSiteUrl.length !== 0 && (<a href={insideTrackSiteUrl}><FaLink/></a>)}
+              <IconContext.Provider value={{ className: "insideTrack-icon link-icon" }}>
+                {insideTrackSiteUrl !== null && insideTrackSiteUrl.length !== 0 && (<a href={insideTrackSiteUrl}><FaLink/></a>)}
               </IconContext.Provider>
               <span className="insideTrack-icon"><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
             </div>

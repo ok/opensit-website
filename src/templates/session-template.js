@@ -21,7 +21,7 @@ const SessionPage = ({ data }) => {
               <span>{session.speakers.map((speaker, i) => ([
                 i > 0 && " & ",<Speaker speaker={speaker} />]
               ))}</span>
-              <h1>{session.title}</h1>
+              <h2>{session.title}</h2>
               <p><Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
               <iframe title={session.title} width="100%" height="315" src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div>
