@@ -128,13 +128,6 @@ body {
     margin-bottom: .3em;
 }
 
-.insideTrack-icon {
-    margin-right: .5em;
-    width: 1.5em;
-    height: 1.5em;
-    color: #212529;
-}
-
 .insideTrack-icon-hashtag {
     width: 1.0em;
     height: 1.0em;
@@ -205,6 +198,21 @@ body {
     align-items: center;
 }
 
+.insideTrack-icon {
+    margin-right: .5em;
+    margin-bottom: .2em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.speaker-icon {
+    margin-bottom: .2em;
+    margin-left: .3em;
+    margin-right: .3em;
+    width: 1.0em;
+    height: 1.0em;
+}
+
 .twitter-icon {
     color: #38A1F3;
 }
@@ -214,17 +222,9 @@ body {
 }
 
 .link-icon {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.speaker-icon {
-    margin-bottom: .2em;
-    margin-left: .3em;
-    margin-right: .3em;
-    width: 1.0em;
-    height: 1.0em;
-    color: #38A1F3;
+    width: 1.1em;
+    height: 1.1em;
+    color: #212529;
 }
 
 @media screen and (min-width:480px) {

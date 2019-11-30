@@ -35,7 +35,7 @@ const MyHeader = ({
               <IconContext.Provider value={{ className: "insideTrack-icon link-icon" }}>
                 {insideTrackSiteUrl !== null && insideTrackSiteUrl.length !== 0 && (<a href={insideTrackSiteUrl}><FaLink/></a>)}
               </IconContext.Provider>
-              <span className="insideTrack-icon"><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
+              <span><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
             </div>
           </div>
         </nav>
