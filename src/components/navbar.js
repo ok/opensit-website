@@ -1,9 +1,8 @@
 import React from "react"
 import 'react-sticky-header/styles.css';
 import StickyHeader from 'react-sticky-header';
-import { FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaTwitter, FaYoutube, FaLink } from 'react-icons/fa';
 import { IconContext } from "react-icons";
-import { getDisplayUrl } from "../components/helper.js"
 
 const MyHeader = ({ 
     insideTrackSiteUrl, 
@@ -27,12 +26,16 @@ const MyHeader = ({
             </div>
             <div className="insideTrack-titleWrapper">
               <h2 className="insideTrack-title">{insideTrackName}</h2>
-              <IconContext.Provider value={{ size: "1.3em" }}>
-                {insideTrackTwitterId !== null && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter className="insideTrack-icon"/></a>)}
-                {insideTrackYoutubeUrl !== 0 && (<a href={insideTrackYoutubeUrl}><FaYoutube className="insideTrack-icon"/></a>)}
+              <IconContext.Provider value={{ className: "insideTrack-icon" }}>
+                {insideTrackTwitterId !== null && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
+              </IconContext.Provider>
+              <IconContext.Provider value={{ className: "insideTrack-icon" }}>
+                {insideTrackYoutubeUrl !== 0 && (<a href={insideTrackYoutubeUrl}><FaYoutube/></a>)}
+              </IconContext.Provider>
+              <IconContext.Provider value={{ className: "insideTrack-icon insideTrack-icon-link" }}>
+                {insideTrackSiteUrl.length !== 0 && (<a href={insideTrackSiteUrl}><FaLink/></a>)}
               </IconContext.Provider>
               <span className="insideTrack-icon"><a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a></span>
-              {insideTrackSiteUrl !== 0 && (<span style={{marginRight: `0.7rem`,}}><a href={insideTrackSiteUrl}>{getDisplayUrl(insideTrackSiteUrl)}</a></span>)}
             </div>
           </div>
         </nav>
