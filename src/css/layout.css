@@ -59,47 +59,6 @@ body {
     font-size: 24px;
 }
 
-.insideTrack-title {
-    margin-bottom: .3em;
-}
-
-.insideTrack-icon {
-    margin-right: .5em;
-    color: #212529;
-}
-
-.insideTrack-icon-hashtag {
-    color: #212529;
-}
-
-.insideTrack-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-}
-.insideTrack-navBar {
-    padding-left:20px;
-    padding-right:20px;
-}
-
-.insideTrack-desktop-hidden {
-    display: flex;
-}
-
-.insideTrack-mobile-hidden {
-    display: none;
-}
-
-.insideTrack-videoWrapper {
-    max-width:560px;
-    width:auto;
-    height:480px;
-    max-height:480px;
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
@@ -164,6 +123,56 @@ body {
 .event-wrapper {
     margin-top:20px;
 }
+
+.insideTrack-title {
+    margin-bottom: .3em;
+}
+
+.insideTrack-icon {
+    margin-right: .5em;
+    width: 1.5em;
+    height: 1.5em;
+    color: #212529;
+}
+
+.insideTrack-icon-link {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.insideTrack-icon-hashtag {
+    width: 1.0em;
+    height: 1.0em;
+}
+
+.insideTrack-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.insideTrack-navBar {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.insideTrack-desktop-hidden {
+    display: flex;
+}
+
+.insideTrack-mobile-hidden {
+    display: none;
+}
+
+.insideTrack-videoWrapper {
+    max-width:560px;
+    width:auto;
+    height:480px;
+    max-height:480px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .insideTrack-identity {
     display: flex;
     flex-flow: row nowrap;
