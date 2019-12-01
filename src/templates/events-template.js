@@ -52,7 +52,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                   />
                 ))}
               </div>
-              <div className="row mb-5 px-3 pt-0">
+              <div className="row mb-4 mt-n3 px-3 pt-0">
                 <div className="event-view-more insideTrack-desktop-hidden">
                   <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
                 </div>
@@ -93,7 +93,7 @@ export const query = graphql`
             mimeType
           }
         }
-        sessions(first: 5) {
+        sessions(first: 4) {
           title
           speaker
           id

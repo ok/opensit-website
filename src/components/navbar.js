@@ -41,10 +41,6 @@ const MyHeader = ({
         </nav>
       }
     >
-      <section>
-        <p>
-        </p>
-      </section>
     </StickyHeader>
     )
 

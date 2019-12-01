@@ -15,7 +15,7 @@ export function getYtEmbedUrl(url) {
 }
 
 export function getYtThumbnailUrl(url) {
-  return "https://img.youtube.com/vi/" + getYtVideoId(url) + "/0.jpg";
+  return "https://img.youtube.com/vi/" + getYtVideoId(url) + "/mqdefault.jpg";
 }
 
 // credits: https://stackoverflow.com/a/5782563
