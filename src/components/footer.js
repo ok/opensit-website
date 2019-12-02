@@ -3,20 +3,10 @@ import React from "react"
 
 const Footer = () => (
     <footer className="bg-light footer">
-      <nav className="navbar navbar-expand-lg">
-        <div className="container">
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul className="navbar-nav">
-              <li>
-                <Link to="/about" className="nav-item nav-link text-secondary">About</Link>
-              </li>
-              <li>
-                <a href="https://twitter.com/opensitnet" className="nav-item nav-link text-secondary">Twitter</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <div className="container">
+        <span><Link to="/about" className="text-secondary">About</Link></span>
+        <span><a href="https://twitter.com/opensitnet" className="text-secondary">Twitter</a></span>
+      </div>
     </footer>
 )
 
