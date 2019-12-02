@@ -14,13 +14,13 @@ const InsideTrackPage = ({ data }) => {
     const eventDate = new Date(event.date)
     event.year = eventDate.getFullYear()
   })
-
+  console.log(insideTrack.twitterId)
   return (
     <Layout>
       <SEO 
         type = "summary"
         title = { insideTrack.name }
-        creator = { '@'+insideTrack.twitterId }
+        creator = { (insideTrack.twitterId !== null) ? '@'+insideTrack.twitterId : "" }
         />
       <MyHeader
         insideTrackSiteUrl = { insideTrack.websiteUrl }
