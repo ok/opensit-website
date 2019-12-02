@@ -222,6 +222,14 @@ body {
     color: #212529;
 }
 
+.session-video {
+    transition: all .2s ease-in-out;
+}
+
+.session-video:hover {
+    transform: scale(1.04);
+}
+
 @media screen and (min-width:480px) {
     .event-header {
         margin-bottom:0px;
