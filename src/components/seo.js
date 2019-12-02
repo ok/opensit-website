@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ type, description, lang, title, img, meta }) {
+function SEO({ type, description, title, creator, lang, img, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +27,7 @@ function SEO({ type, description, lang, title, img, meta }) {
 
   const metaDescription = description || site.siteMetadata.description
   const metaSite="@opensitnet"
+  console.log(creator)
   
   return (
     <Helmet
@@ -58,7 +59,7 @@ function SEO({ type, description, lang, title, img, meta }) {
         },
         {
           name: `twitter:creator`,
-          content: metaSite,
+          content: creator,
         },
         {
           name: `twitter:site`,

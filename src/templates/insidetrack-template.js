@@ -18,9 +18,10 @@ const InsideTrackPage = ({ data }) => {
   return (
     <Layout>
       <SEO 
-        type="summary" 
-        title={ insideTrack.name } 
-      />
+        type = "summary"
+        title = { insideTrack.name }
+        creator = { '@'+insideTrack.twitterId }
+        />
       <MyHeader
         insideTrackSiteUrl = { insideTrack.websiteUrl }
         insideTrackName = { insideTrack.name }

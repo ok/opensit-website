@@ -14,10 +14,10 @@ const SessionPage = ({ data }) => {
     <Layout>
       <div className="insideTrack-container">
         <SEO 
-          type="summary_large_image" 
-          title={ session.title } 
-          lang="en"
-          img={ getYtThumbnailUrl(session.recordingUrl) }
+          type = "summary_large_image" 
+          title = { session.title } 
+          creator = { '@'+session.event.insideTrack.twitterId }
+          img = { getYtThumbnailUrl(session.recordingUrl) }
         />
         <div className="row">
           <div className="col-sm-12">
@@ -60,6 +60,7 @@ export const query = graphql`
           insideTrack {
             name
             hashtag
+            twitterId
           }
         }
         speakers {
