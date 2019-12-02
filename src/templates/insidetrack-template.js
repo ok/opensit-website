@@ -21,7 +21,7 @@ const InsideTrackPage = ({ data }) => {
         type = "summary"
         title = { insideTrack.name }
         creator = { (insideTrack.twitterId !== null) ? '@'+insideTrack.twitterId : "" }
-        />
+      />
       <MyHeader
         insideTrackSiteUrl = { insideTrack.websiteUrl }
         insideTrackName = { insideTrack.name }

@@ -23,7 +23,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
         />
         <div className="row mb-3">
           <div className="col-12">
-            <h2>Recent SAP Inside Tracks</h2>
+            <h3>Recent SAP Inside Tracks</h3>
           </div>
         </div>
         {data.gcms.events.map(event => (
@@ -36,7 +36,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                   </div>
                   <div className="event-title-wrapper">
                     <div className="event-title"><h4><Link className={"text-dark"} to={`/${getSlug(event.insideTrack.hashtag)}`}>{event.insideTrack.name}</Link></h4></div>
-                    <div className="event-date text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</div>
+                    <div className="event-date text-muted">{Moment(event.date).format('D MMM YYYY')}</div>
                   </div >
 
                 </div>

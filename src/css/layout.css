@@ -112,7 +112,7 @@ body {
     margin:0 0 2px 0;
     line-height: 1;
 }
-.event-title h4, .event-title a{
+.event-title h4, .event-title a {
     margin:0;
     line-height: 1;
     vertical-align: top;
@@ -121,7 +121,7 @@ body {
     margin:0 0 0 0;
 }
 .event-wrapper {
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 .insideTrack-title {
