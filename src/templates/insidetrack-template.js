@@ -17,7 +17,10 @@ const InsideTrackPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Inside Track Event" />
+      <SEO 
+        type="summary" 
+        title={ insideTrack.name } 
+      />
       <MyHeader
         insideTrackSiteUrl = { insideTrack.websiteUrl }
         insideTrackName = { insideTrack.name }
@@ -31,7 +34,7 @@ const InsideTrackPage = ({ data }) => {
           <div className="row mt-5" key={event.id}>
             <div className={"col-sm-12"}>
                 <div className="insideTrack-date">
-                  <h5 className="">{Moment(event.date).format('D MMM YYYY')}</h5>
+                  <h5>{ Moment(event.date).format('D MMM YYYY') }</h5>
                 </div>
                 <div className="card-deck insideTrack-card-deck">
                   {event.sessions.map(session => (

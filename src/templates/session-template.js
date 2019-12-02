@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Speaker from "../components/speaker"
-import { getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
+import { getYtThumbnailUrl, getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
   const session = data.gcms.session;
@@ -13,7 +13,12 @@ const SessionPage = ({ data }) => {
   return (
     <Layout>
       <div className="insideTrack-container">
-        <SEO title="Session" />
+        <SEO 
+          type="summary_large_image" 
+          title={ session.title } 
+          lang="en"
+          img={ getYtThumbnailUrl(session.recordingUrl) }
+        />
         <div className="row">
           <div className="col-sm-12">
             <div className="insideTrack-videoWrapper">
