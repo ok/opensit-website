@@ -26,14 +26,14 @@ function SEO({ type, description, lang, title, img, meta }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-
+  const metaSite="@opensitnet"
+  
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      metaSite="@opensitnet"
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
