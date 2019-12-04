@@ -33,7 +33,7 @@ const InsideTrackPage = ({ data }) => {
         />
         <div className="insideTrack-container">
           { insideTrack.events.map(event => (
-            <div className="row mt-5" key={event.id}>
+            <div className="row mt-4" key={event.id}>
               <div className={"col-sm-12"}>
                   <div className="insideTrack-date">
                     <h5>{ Moment(event.date).format('D MMM YYYY') }</h5>
