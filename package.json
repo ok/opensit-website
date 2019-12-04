@@ -12,7 +12,7 @@
     "eslint": "^6.6.0",
     "eslint-plugin-flowtype": "^2.50.3",
     "gatsby": "^2.15.11",
-    "gatsby-cli": "^2.8.12",
+    "gatsby-cli": "^2.8.14",
     "gatsby-image": "^2.2.17",
     "gatsby-plugin-flow": "^1.1.12",
     "gatsby-plugin-manifest": "^2.2.15",
@@ -32,7 +32,7 @@
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "react-sticky-header": "^0.2.0",
+    "react-icons": "^3.8.0",
     "reactstrap": "^8.0.1"
   },
   "devDependencies": {

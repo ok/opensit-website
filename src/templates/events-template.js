@@ -17,23 +17,26 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
   return (
     <Layout>
       <div className="insideTrack-container">
-        <SEO title="Home" />
+        <SEO
+          type="summary"
+          title="Recent SAP Inside Tracks"
+        />
         <div className="row mb-3">
           <div className="col-12">
-            <h2>Recent SAP Inside Tracks</h2>
+            <h5>Recent SAP Inside Tracks</h5>
           </div>
         </div>
         {data.gcms.events.map(event => (
           <div className="event-wrapper row mb-2" key={event.id}>
-            <div className="col-sm-12">
-              <div className="event-header">
+            <div className="col-sm-12" id="sticky-container">
+              <div className="event-header bg-white">
                 <div className="event-info">
                   <div className="event-logo">
                     <img src={event.insideTrack.logo.url} alt="inside track logo"></img>
                   </div>
                   <div className="event-title-wrapper">
                     <div className="event-title"><h4><Link className={"text-dark"} to={`/${getSlug(event.insideTrack.hashtag)}`}>{event.insideTrack.name}</Link></h4></div>
-                    <div className="event-date text-muted">Date: {Moment(event.date).format('D MMM YYYY')}</div>
+                    <div className="event-date text-muted">{Moment(event.date).format('D MMM YYYY')}</div>
                   </div >
 
                 </div>
@@ -52,8 +55,8 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
                   />
                 ))}
               </div>
-              <div className="row mb-5 px-3 pt-0">
-                <div className="event-view-more insideTrack-desktop-hidden pl-2">
+              <div className="row mb-5 mt-n3 px-3 pt-0">
+                <div className="event-view-more insideTrack-desktop-hidden">
                   <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
                 </div>
               </div>
@@ -93,7 +96,7 @@ export const query = graphql`
             mimeType
           }
         }
-        sessions(first: 5) {
+        sessions(first: 4) {
           title
           speaker
           id
