@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="bg-dark" style={{marginBottom: `2rem`,}}>
+  <header className="bg-dark header">
     <div className="insideTrack-container">
       <nav className="navbar px-0 navbar-expand-lg navbar-light bg-dark">
         <h2><Link to="/" className="text-light">{siteTitle}</Link></h2>

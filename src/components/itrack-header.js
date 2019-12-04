@@ -12,7 +12,7 @@ const InsideTrackHeader = ({
   }) => {
 
   return (
-    <nav id="navBar" className="navbar navbar-expand-lg bg-white navbar-light insideTrack-sticky">
+    <div id="navBar" className="navbar-expand-lg bg-white navbar-light insideTrack-sticky">
       <div className="insideTrack-identity insideTrack-container">
         <div className="insideTrack-logoWrapper">
           <img src={insideTrackLogoUrl} alt="inside track logo"></img>
@@ -31,7 +31,7 @@ const InsideTrackHeader = ({
           <a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a>
         </div>
       </div>
-    </nav>
+    </div>
   )
 };
 

@@ -25,6 +25,10 @@ body {
     margin-right: 1rem;
 }
 
+.header {
+    margin-bottom: 1.5em;
+}
+
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
@@ -37,10 +41,6 @@ body {
     margin-left: 0;
     margin-right: 0;
     justify-content: flex-start;
-}
-
-.navbar.sticky-top {
-    padding:0;
 }
 
 .event-info {
@@ -137,6 +137,7 @@ body {
 
 .insideTrack-logoWrapper {
     max-width: 120px;
+    margin-right: 12px;
 }
 
 .insideTrack-logoWrapper img {
