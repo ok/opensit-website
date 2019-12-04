@@ -83,6 +83,7 @@ body {
 }
 .insideTrack-title {
     margin-bottom: .3em;
+    line-height: 1;
     font-size: 24px;
 }
 
@@ -132,7 +133,7 @@ body {
     width:100%;
     max-width:1140px;
     margin: 0 auto;
-    padding:10px 20px;
+    padding:20px 20px;
 }
 
 .insideTrack-logoWrapper {
@@ -157,14 +158,9 @@ body {
 .insideTrack-card-deck {
     justify-content: flex-start;
 }
+
 .insideTrack-logoWrapper img {
     padding-top:1px;
-}
-.insideTrack-identity {
-    display: flex;
-    flex-flow: row nowrap;
-    width:100%;
-    align-items: center;
 }
 
 .insideTrack-icon {
@@ -220,6 +216,9 @@ body {
     .insideTrack-titleWrapper {
         width:85%;
         margin-left:8px;
+    }
+    .insideTrack-identity {
+        align-items: center;
     }
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;

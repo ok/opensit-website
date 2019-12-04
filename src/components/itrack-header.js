@@ -18,7 +18,7 @@ const InsideTrackHeader = ({
           <img src={insideTrackLogoUrl} alt="inside track logo"></img>
         </div>
         <div className="insideTrack-titleWrapper">
-          <h3 className="insideTrack-title">{insideTrackName}</h3>
+          <h4 className="insideTrack-title">{insideTrackName}</h4>
           <IconContext.Provider value={{ className: "insideTrack-icon twitter-icon" }}>
             {insideTrackTwitterId !== null && insideTrackTwitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
           </IconContext.Provider>
