@@ -27,7 +27,6 @@ function SEO({ type, description, title, creator, lang, img, meta }) {
 
   const metaDescription = description || site.siteMetadata.description
   const metaSite="@opensitnet"
-  console.log(creator)
 
   return (
     <Helmet
