@@ -14,7 +14,7 @@ const InsideTrackPage = ({ data }) => {
     const eventDate = new Date(event.date)
     event.year = eventDate.getFullYear()
   })
-  console.log(insideTrack.twitterId)
+
   return (
     <Layout>
       <SEO 
