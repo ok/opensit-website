@@ -206,9 +206,6 @@ body {
 
 @media screen and (min-width:480px) {
     .event-header {
-        position: sticky; 
-        top: 0px;
-        z-index:100;
         margin-bottom:0px;
         background: #ffffff;
     }
@@ -265,11 +262,6 @@ body {
         max-width:31%;
         margin: 0 8px 20px 8px;
     }
-    .event-header {
-        position: sticky; 
-        top: 0px;
-        z-index:100;
-    }
     .insideTrack-desktop-hidden {
         display: none;
     }
@@ -281,12 +273,6 @@ body {
 
 
 @media screen and (min-width:1024px) {
-    .event-header {
-        position: relative; 
-        top: 0px;
-        z-index:0;
-        background: #ffffff;
-    }
     .card-deck .card.card-custom-style {
         min-width: 150px;
         max-width: 23%;
