@@ -23,13 +23,13 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
         />
         <div className="row mb-3">
           <div className="col-12">
-            <h3>Recent SAP Inside Tracks</h3>
+            <h5>Recent SAP Inside Tracks</h5>
           </div>
         </div>
         {data.gcms.events.map(event => (
           <div className="event-wrapper row mb-2" key={event.id}>
-            <div className="col-sm-12">
-              <div className="event-header">
+            <div className="col-sm-12" id="sticky-container">
+              <div className="event-header bg-white">
                 <div className="event-info">
                   <div className="event-logo">
                     <img src={event.insideTrack.logo.url} alt="inside track logo"></img>
