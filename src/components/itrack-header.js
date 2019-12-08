@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 const InsideTrackHeader = ({ insideTrack }) => {
 
   return (
-    <div className="bg-white insideTrack-identity insideTrack-container insideTrack-sticky">
+    <div className="bg-white insideTrack-identity insideTrack-container element-sticky">
       <div className="insideTrack-logoWrapper">
         <img src={insideTrack.logo.url} alt="inside track logo"></img>
       </div>

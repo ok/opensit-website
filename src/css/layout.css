@@ -31,17 +31,18 @@ body {
     margin-bottom: 1.5em;
 }
 
+.element-sticky {
+    position: sticky; 
+    top: 0px;
+    z-index:100;
+}
+
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
     border: 0;
     flex: 1 1 auto;
     margin: 0px 0px 20px 0px;
-}
-
-.event-info {
-    display: flex;
-    flex-flow: row nowrap;
 }
 
 .event-title-wrapper {
@@ -63,11 +64,6 @@ body {
     font-size: 24px;
 }
 
-.insideTrack-sticky {
-    position: sticky; 
-    top: 0px;
-    z-index:100;
-}
 .insideTrack-container {
     max-width: 1140px;
     margin: 0 auto;
@@ -161,13 +157,13 @@ body {
 @media screen and (min-width: 760px) {
     .card-deck {
         /* justify-content: space-between; */
-        padding: 0px 8px 20px 8px;
+        padding: 0px 8px 0px 8px;
     }
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;
         max-width:50%;
         margin-bottom: 20px;
-        padding: 0px 8px 20px 8px;
+        padding: 0px 8px 0px 8px;
     }
     .insideTrack-logo img {
         max-width: 120px;
@@ -182,7 +178,7 @@ body {
     .card-deck .card.card-custom-style {
         min-width: 150px;
         max-width: 25%;
-        padding: 0px 8px 20px 8px;
+        padding: 0px 8px 0px 8px;
     }
     .insideTrack-desktop-hidden {
         display: none;
