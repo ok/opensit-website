@@ -31,6 +31,11 @@ body {
     margin-bottom: 1.5em;
 }
 
+.pagination {
+    justify-content: center;
+    padding-bottom: 1.45rem;
+}
+
 .element-sticky {
     position: sticky; 
     top: 0px;
@@ -188,12 +193,8 @@ body {
     }
 }
 
-.pagination {
-    justify-content: center;
-    padding-bottom: 1.45rem;
-}
-
-/*  YouTube player sizes */
+/* YouTube player sizes */
+/* credits: https://coderwall.com/p/asqkpg/responsive-youtube-video-embeds */
 @media (min-width: 992px) {
     .youtubevid {
         width: 960px;
@@ -217,7 +218,7 @@ body {
 
 @media (max-width: 480px) {
     .youtubevid {
-        width: 280px;
-        height: 156px; /* 225px */
+        width: auto;
+        height: 189px; /* 225px */
     }
 }
