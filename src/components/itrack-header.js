@@ -2,34 +2,25 @@ import React from "react"
 import { FaTwitter, FaYoutube, FaLink } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
-const InsideTrackHeader = ({ 
-    insideTrackSiteUrl, 
-    insideTrackName, 
-    insideTrackHashtag, 
-    insideTrackLogoUrl,
-    insideTrackTwitterId,
-    insideTrackYoutubeUrl
-  }) => {
+const InsideTrackHeader = ({ insideTrack }) => {
 
   return (
-    <div id="navBar" className="navbar-expand-lg bg-white navbar-light insideTrack-sticky">
-      <div className="insideTrack-identity insideTrack-container">
-        <div className="insideTrack-logoWrapper">
-          <img src={insideTrackLogoUrl} alt="inside track logo"></img>
-        </div>
-        <div className="insideTrack-titleWrapper">
-          <h4 className="insideTrack-title">{insideTrackName}</h4>
-          <IconContext.Provider value={{ className: "insideTrack-icon twitter-icon" }}>
-            {insideTrackTwitterId !== null && insideTrackTwitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrackTwitterId}><FaTwitter/></a>)}
-          </IconContext.Provider>
-          <IconContext.Provider value={{ className: "insideTrack-icon youtube-icon" }}>
-            {insideTrackYoutubeUrl !== null && insideTrackYoutubeUrl.length !== 0 && (<a href={insideTrackYoutubeUrl}><FaYoutube/></a>)}
-          </IconContext.Provider>
-          <IconContext.Provider value={{ className: "insideTrack-icon link-icon" }}>
-            {insideTrackSiteUrl !== null && insideTrackSiteUrl.length !== 0 && (<a href={insideTrackSiteUrl}><FaLink/></a>)}
-          </IconContext.Provider>
-          <a href={`https://twitter.com/hashtag/${insideTrackHashtag}`}>#{insideTrackHashtag}</a>
-        </div>
+    <div className="bg-white insideTrack-identity insideTrack-container insideTrack-sticky">
+      <div className="insideTrack-logoWrapper">
+        <img src={insideTrack.logo.url} alt="inside track logo"></img>
+      </div>
+      <div>
+        <h4>{insideTrack.name}</h4>
+        <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
+          {insideTrack.twitterId !== null && insideTrack.twitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrack.twitterId}><FaTwitter/></a>)}
+        </IconContext.Provider>
+        <IconContext.Provider value={{ className: "big-icon youtube-icon" }}>
+          {insideTrack.youTubeUrl !== null && insideTrack.youTubeUrl.length !== 0 && (<a href={insideTrack.youTubeUrl}><FaYoutube/></a>)}
+        </IconContext.Provider>
+        <IconContext.Provider value={{ className: "big-icon link-icon" }}>
+          {insideTrack.websiteUrl !== null && insideTrack.websiteUrl.length !== 0 && (<a href={insideTrack.websiteUrl}><FaLink/></a>)}
+        </IconContext.Provider>
+        <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a>
       </div>
     </div>
   )
