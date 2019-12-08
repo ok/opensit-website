@@ -19,7 +19,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
           type="summary"
           title="Recent SAP Inside Tracks"
         />
-        <div className="row mb-3">
+        <div className="row mb-2">
           <div className="col-12">
             <h5>Recent SAP Inside Tracks</h5>
           </div>

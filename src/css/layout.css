@@ -53,7 +53,8 @@ body {
 .event-header {
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom:10px;
+    padding-top:1em;
+    padding-bottom:1em;
 }
 
 .insideTrack-title {
@@ -66,8 +67,6 @@ body {
     position: sticky; 
     top: 0px;
     z-index:100;
-    padding-bottom:4px;
-    box-shadow:  0 2px .30rem -4px rgba(120, 120, 120, 0.62);
 }
 .insideTrack-container {
     max-width: 1140px;
@@ -160,9 +159,6 @@ body {
 
 /* iPad */
 @media screen and (min-width: 760px) {
-    .event-header {
-        margin-bottom:20px;
-    }
     .card-deck {
         /* justify-content: space-between; */
         padding: 0px 8px 20px 8px;

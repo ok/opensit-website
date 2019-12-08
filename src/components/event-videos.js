@@ -33,7 +33,7 @@ const EventVideos = ({ event, hashtag, preview }) => {
     {/* or show just event date and some videos */}
     { preview === true && (
     <>
-    <div className="event-header bg-white">
+    <div className="event-header bg-white insideTrack-sticky">
       <div className="event-logo">
         <img src={event.insideTrack.logo.url} alt="inside track logo"></img>
       </div>
