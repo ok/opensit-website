@@ -8,7 +8,6 @@ import { getSlug } from "../components/helper.js"
 import Video from "../components/video"
 
 const EventVideos = ({ event, hashtag, preview }) => {
-  console.log(event);
   return (
   <>
     {/* show full header and all videos */}
@@ -42,7 +41,7 @@ const EventVideos = ({ event, hashtag, preview }) => {
         <div className="event-date text-muted">{Moment(event.date).format('D MMM YYYY')}</div>
       </div >
       <div className="ml-auto insideTrack-mobile-hidden">
-        <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
+      <span className="align-bottom"><Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link></span>
       </div>
     </div>
     <div className="card-deck">
