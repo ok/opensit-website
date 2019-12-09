@@ -1,12 +1,10 @@
 import React from "react"
-import Moment from 'moment'
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Video from "../components/video"
+import EventVideos from "../components/event-videos"
 import InsideTrackHeader from "../components/itrack-header"
-
 
 const InsideTrackPage = ({ data }) => {
   const insideTrack = data.gcms.insideTrack
@@ -22,37 +20,21 @@ const InsideTrackPage = ({ data }) => {
         title = { insideTrack.name }
         creator = { (insideTrack.twitterId !== null) ? '@'+insideTrack.twitterId : "" }
       />
-      <div id="sticky-container">
-        <InsideTrackHeader
-          insideTrackSiteUrl = { insideTrack.websiteUrl }
-          insideTrackName = { insideTrack.name }
-          insideTrackHashtag = { insideTrack.hashtag }
-          insideTrackLogoUrl = { insideTrack.logo.url }
-          insideTrackTwitterId = { insideTrack.twitterId }
-          insideTrackYoutubeUrl = { insideTrack.youTubeUrl }
-        />
-        <div className="insideTrack-container">
-          { insideTrack.events.map(event => (
-            <div className="row mt-4" key={event.id}>
-              <div className={"col-sm-12"}>
-                  <div className="insideTrack-date">
-                    <h5>{ Moment(event.date).format('D MMM YYYY') }</h5>
-                  </div>
-                  <div className="card-deck insideTrack-card-deck">
-                    {event.sessions.map(session => (
-                      <Video.Player
-                        sessionId = {session.id}
-                        sessionTitle = {session.title}
-                        sessionUrl = {session.recordingUrl}
-                        hashtag = {insideTrack.hashtag}
-                        eventYear = {event.year}
-                      />
-                    ))}
-                  </div>
-              </div>
+      <InsideTrackHeader
+        insideTrack = { insideTrack }
+      />
+      <div className="insideTrack-container">
+        { insideTrack.events.map(event => (
+          <div className="row mt-4" key={event.id}>
+            <div className={"col-sm-12"}>
+            <EventVideos
+              event = { event }
+              hashtag = { insideTrack.hashtag }
+              preview = { false }
+            />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </Layout>
   )
@@ -74,7 +56,7 @@ export const query = graphql`
         logo {
           url(
             transformation: {
-              image: { resize: { width: 80, height: 80, fit: scale } }
+              image: { resize: { width: 65, height: 65, fit: scale } }
             }
           )
           mimeType

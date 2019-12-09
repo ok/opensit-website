@@ -1,3 +1,5 @@
+/* Default layout for phone displays */
+
 html {
     font-family: Arial, Helvetica, sans-serif;
     -ms-text-size-adjust: 100%;
@@ -29,23 +31,23 @@ body {
     margin-bottom: 1.5em;
 }
 
+.pagination {
+    justify-content: center;
+    padding-bottom: 1.45rem;
+}
+
+.element-sticky {
+    position: sticky; 
+    top: 0px;
+    z-index:100;
+}
+
 .card-deck .card.card-custom-style {
     width: 100%;
     min-width: 150px;
     border: 0;
     flex: 1 1 auto;
     margin: 0px 0px 20px 0px;
-}
-
-.card-deck.card-deck-custom-style {
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: flex-start;
-}
-
-.event-info {
-    display: flex;
-    flex-flow: row nowrap;
 }
 
 .event-title-wrapper {
@@ -57,46 +59,14 @@ body {
 .event-header {
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom:10px;
+    padding-top:1em;
+    padding-bottom:1em;
 }
 
-.event-logo {
-    max-width:40px;
-    padding-top:2px;
-    margin-right:4px;
-}
-.event-logo img {
-    width:45px;
-    height:45px;
-}
-.event-title {
-    margin:0 0 2px 0;
-    line-height: 1;
-}
-.event-title h4, .event-title a {
-    margin:0;
-    line-height: 1;
-    vertical-align: top;
-}
-.event-date {
-    margin:0 0 0 0;
-}
 .insideTrack-title {
     margin-bottom: .3em;
     line-height: 1;
     font-size: 24px;
-}
-
-.insideTrack-sticky {
-    position: sticky; 
-    top: 0px;
-    z-index:100;
-    padding-bottom:4px;
-    box-shadow:  0 2px .30rem -4px rgba(120, 120, 120, 0.62);
-}
-.insideTrack-icon-hashtag {
-    width: 1.0em;
-    height: 1.0em;
 }
 
 .insideTrack-container {
@@ -105,11 +75,6 @@ body {
     padding: 0 20px;
 
 }
-.insideTrack-navBar {
-    padding-left:20px;
-    padding-right:20px;
-}
-
 .insideTrack-desktop-hidden {
     display: flex;
 }
@@ -119,10 +84,6 @@ body {
 }
 
 .insideTrack-videoWrapper {
-    max-width:560px;
-    width:auto;
-    height:560px;
-    max-height:560px;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -130,42 +91,15 @@ body {
 .insideTrack-identity {
     display: flex;
     flex-flow: row nowrap;
-    width:100%;
-    max-width:1140px;
-    margin: 0 auto;
     padding:20px 20px;
 }
 
 .insideTrack-logoWrapper {
-    max-width: 120px;
-    margin-right: 12px;
+    margin-right:20px;
 }
 
-.insideTrack-logoWrapper img {
-    max-width:65px;
-}
-
-.insideTrack-titleWrapper {
-    width:100%;
-    margin-left:8px;
-}
-
-.insideTrack-date {
-    margin-bottom: 1px;
-    justify-content: space-between;
-}
-
-.insideTrack-card-deck {
-    justify-content: flex-start;
-}
-
-.insideTrack-logoWrapper img {
-    padding-top:1px;
-}
-
-.insideTrack-icon {
+.big-icon {
     margin-right: .5em;
-    margin-bottom: .2em;
     width: 1.5em;
     height: 1.5em;
 }
@@ -200,6 +134,7 @@ body {
     transform: scale(1.04);
 }
 
+/* Phones */
 @media screen and (min-width:480px) {
     .event-header {
         margin-bottom:0px;
@@ -213,33 +148,27 @@ body {
     .insideTrack-logoWrapper img {
         max-width:90px;
     }
-    .insideTrack-titleWrapper {
-        width:85%;
-        margin-left:8px;
-    }
     .insideTrack-identity {
         align-items: center;
     }
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;
-        max-width:47%;
-        margin: 0 8px 0px 8px;
+        max-width:50%;
+        margin: 0px;
     }
 }
 
+/* iPad */
 @media screen and (min-width: 760px) {
-    .event-header {
-        margin-bottom:20px;
-    }
-    .card-deck.card-deck-custom-style {
-        justify-content: space-between;
-        margin-left: -8px;
-        margin-right: -8px;
+    .card-deck {
+        /* justify-content: space-between; */
+        padding: 0px 8px 0px 8px;
     }
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;
-        max-width:47%;
-        margin: 0 8px 20px 8px;
+        max-width:50%;
+        margin-bottom: 20px;
+        padding: 0px 8px 0px 8px;
     }
     .insideTrack-logo img {
         max-width: 120px;
@@ -249,17 +178,12 @@ body {
     }
 }
 
-@media screen and (min-width: 960px) {
-    .event-wrapper {
-        margin-top:8px;
-    }
-    .card-deck.card-deck-custom-style {
-        justify-content: flex-start;
-    }
+/* iPad Pro & desktop */
+@media screen and (min-width:1024px) {
     .card-deck .card.card-custom-style {
         min-width: 150px;
-        max-width:31%;
-        margin: 0 8px 20px 8px;
+        max-width: 25%;
+        padding: 0px 8px 0px 8px;
     }
     .insideTrack-desktop-hidden {
         display: none;
@@ -267,23 +191,34 @@ body {
     .insideTrack-mobile-hidden {
         display: flex;
     }
-
 }
 
-
-@media screen and (min-width:1024px) {
-    .card-deck .card.card-custom-style {
-        min-width: 150px;
-        max-width: 23%;
-    }
-    .card-deck.insideTrack {
-        justify-content: flex-start;
-    }
-    .card-deck.card-deck-custom-style {
-        justify-content: space-between;
+/* YouTube player sizes */
+/* credits: https://coderwall.com/p/asqkpg/responsive-youtube-video-embeds */
+@media (min-width: 992px) {
+    .youtubevid {
+        width: 960px;
+        height: 540px; /* 720px */
     }
 }
-.pagination {
-    justify-content: center;
-    padding-bottom: 1.45rem;
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .youtubevid {
+        width: 640px;
+        height: 360px; /* 480px */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 766px) {
+    .youtubevid {
+        width: 480px;
+        height: 270px; /* 320px */
+    }
+}
+
+@media (max-width: 480px) {
+    .youtubevid {
+        width: auto;
+        height: 189px; /* 225px */
+    }
 }
