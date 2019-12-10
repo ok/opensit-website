@@ -42,14 +42,6 @@ body {
     z-index:100;
 }
 
-.card-deck .card.card-custom-style {
-    width: 100%;
-    min-width: 150px;
-    border: 0;
-    flex: 1 1 auto;
-    margin: 0px 0px 20px 0px;
-}
-
 .event-title-wrapper {
     display: flex;
     flex-flow: column nowrap;
@@ -61,6 +53,13 @@ body {
     flex-flow: row nowrap;
     padding-top:1em;
     padding-bottom:1em;
+    margin-bottom:0px;
+    background: #ffffff;
+}
+
+.event-logo {
+    padding-top:2px;
+    padding-left:1px;
 }
 
 .insideTrack-title {
@@ -131,15 +130,19 @@ body {
 }
 
 .session-video:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+}
+
+.card-deck .card.card-custom-style {
+    width: 100%;
+    min-width: 150px;
+    border: 0;
+    flex: 1 1 auto;
+    margin: 0px 0px 20px 0px;
 }
 
 /* Phones */
 @media screen and (min-width:480px) {
-    .event-header {
-        margin-bottom:0px;
-        background: #ffffff;
-    }
     .insideTrack-logoWrapper {
         margin-right:20px;
         margin-left:0;
@@ -154,20 +157,18 @@ body {
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;
         max-width:50%;
-        margin: 0px;
+        padding: 0px;
     }
 }
 
 /* iPad */
 @media screen and (min-width: 760px) {
     .card-deck {
-        /* justify-content: space-between; */
-        padding: 0px 8px 0px 8px;
+        padding: 6px 8px 0px 8px;
     }
     .card-deck .card.card-custom-style {
         flex: 1 0 auto;
         max-width:50%;
-        margin-bottom: 20px;
         padding: 0px 8px 0px 8px;
     }
     .insideTrack-logo img {
@@ -181,9 +182,7 @@ body {
 /* iPad Pro & desktop */
 @media screen and (min-width:1024px) {
     .card-deck .card.card-custom-style {
-        min-width: 150px;
         max-width: 25%;
-        padding: 0px 8px 0px 8px;
     }
     .insideTrack-desktop-hidden {
         display: none;

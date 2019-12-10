@@ -33,7 +33,7 @@ const SessionPage = ({ data }) => {
               <p><Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
               <iframe className="youtubevid" title={session.title} src={getYtEmbedUrl(session.recordingUrl)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div>
-                {session.topics.map((item, index) => (
+                {session.topics.map((item) => (
                   <span className="badge badge-primary" style={{marginRight: `.5rem`,marginTop: `.7rem`,}} key={item}>{getDisplayName(item)} </span>
                 ))}
               </div>
