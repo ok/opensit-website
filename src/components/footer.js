@@ -13,12 +13,12 @@ const Footer = () => (
             <span><Link to="/privacy" className="text-secondary">Privacy</Link></span>
           </div>
           <div className="col text-center footer-heart">
-            <IconContext.Provider value={{ className: "big-icon heart-icon" }}>
+            <IconContext.Provider value={{ className: "heart-icon" }}>
               Made with <FaHeart/> in Berlin
             </IconContext.Provider>
           </div>
           <div className="col text-right">
-            <IconContext.Provider value={{ className: "big-icon" }}>
+            <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
               <a href="https://twitter.com/opensitnet" className="text-secondary"><FaTwitter/></a>
             </IconContext.Provider>
           </div>
