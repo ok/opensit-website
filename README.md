@@ -19,3 +19,10 @@ gatsby develop
 Your site is now running at `http://localhost:8000`!
 
 GraphQL explorer is available at `http://localhost:8000/___graphql`
+
+## Data Privacy
+
+We use the following online generator services:
+
+- https://www.ratgeberrecht.eu/leistungen/muster-datenschutzerklaerung.html
+- http://www.translate-24h.de

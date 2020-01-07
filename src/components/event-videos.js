@@ -19,6 +19,7 @@ const EventVideos = ({ event, hashtag, preview }) => {
     <div className="card-deck">
       {event.sessions.map(session => (
         <Video.Player
+          key = {session.id}
           sessionId = {session.id}
           sessionTitle = {session.title}
           sessionUrl = {session.recordingUrl}
@@ -47,6 +48,7 @@ const EventVideos = ({ event, hashtag, preview }) => {
     <div className="card-deck">
       {event.sessions.map(session => (
         <Video.Player
+          key = {session.id}
           sessionId = {session.id}
           sessionTitle = {session.title}
           sessionUrl = {session.recordingUrl}
