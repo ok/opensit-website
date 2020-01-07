@@ -7,19 +7,19 @@ const PrivacyPage = () => (
   <Layout>
     <SEO title="OpenSIT: Imprint" />
     <div className="insideTrack-container">
-    <h4>Legal Disclosure</h4>
+    <h3>Legal Disclosure</h3>
     <p>Information in accordance with Section 5 TMG</p>
     <p>Oliver Kohl
     <br/>Eisenacher Strasse 108
     <br/>10777 Berlin
     </p>
-    <h4>Contact Information</h4>
+    <h3>Contact Information</h3>
     <p>
-    Telephone: +49 151 57118554
+    Telephone: <a href="tel:+49 151 57118554">+49 151 57118554</a>
     <br/>E-Mail: <a href="mailto:opensitnet@gmail.com">opensitnet@gmail.com</a>
     <br/>Internet address: <a href="https://opensit.net" target="_blank" rel="noopener noreferrer">https://opensit.net</a>
     </p>
-    <h4>Disclaimer</h4>
+    <h3>Disclaimer</h3>
     <p>Accountability for content
     <br/>The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents'
     accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for 
