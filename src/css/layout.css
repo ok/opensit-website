@@ -23,6 +23,18 @@ body {
     background-color: #f5f5f5;
 }
 
+.footer-container {
+    display: flex;
+    flex-flow: column;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-heart {
+    display: none;
+}
+
 .footer span {
     margin-right: 1rem;
 }
@@ -74,6 +86,7 @@ body {
     padding: 0 20px;
 
 }
+
 .insideTrack-desktop-hidden {
     display: flex;
 }
@@ -123,6 +136,12 @@ body {
     width: 1.1em;
     height: 1.1em;
     color: #212529;
+}
+
+.heart-icon {
+    margin-left: .3em;
+    margin-right: .3em;
+    color: #FF5555;
 }
 
 .session-video {
@@ -176,6 +195,16 @@ body {
     }
     .insideTrack-view-more {
         max-width: 120px;
+    }
+    .footer-container {
+        display: flex;
+        flex-flow: row;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .footer-heart {
+        display: block;
     }
 }
 
