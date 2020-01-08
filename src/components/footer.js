@@ -12,7 +12,7 @@ const Footer = () => (
             <span><Link to="/imprint" className="text-secondary">Imprint</Link></span>
             <span><Link to="/privacy" className="text-secondary">Privacy</Link></span>
           </div>
-          <div className="col text-center footer-heart">
+          <div className="col text-center footer-heart text-secondary">
             <IconContext.Provider value={{ className: "heart-icon" }}>
               Made with <FaHeart/> in Berlin
             </IconContext.Provider>
