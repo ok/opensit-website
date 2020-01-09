@@ -17,7 +17,7 @@ const InsideTrackPage = ({ data }) => {
     <Layout>
       <SEO 
         title = { insideTrack.name }
-        creator = { (insideTrack.twitterId !== null) ? '@'+insideTrack.twitterId : "" }
+        creator = { (insideTrack.twitterId !== null) ? insideTrack.twitterId : "" }
       />
       <InsideTrackHeader
         insideTrack = { insideTrack }

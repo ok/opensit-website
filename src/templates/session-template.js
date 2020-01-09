@@ -15,7 +15,7 @@ const SessionPage = ({ data }) => {
       <div className="insideTrack-container">
         <SEO 
           title = { session.title } 
-          creator = { '@'+session.event.insideTrack.twitterId }
+          creator = { session.event.insideTrack.twitterId }
           image = { getYtThumbnailUrl(session.recordingUrl) }
         />
         <div className="row">
