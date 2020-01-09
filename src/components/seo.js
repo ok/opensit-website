@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import favicon48 from "../images/favicon-48x48.png"
 import touchicon from "../images/touchicon-180x180.png"
+import opensitlogo from "../images/opensit-logo_400x400.png"
 
 function SEO({ description, title, creator, image }) {
   const { site } = useStaticQuery(
@@ -23,7 +24,6 @@ function SEO({ description, title, creator, image }) {
             description
             author
             siteUrl
-            image
             twitter
           }
         }
@@ -34,7 +34,7 @@ function SEO({ description, title, creator, image }) {
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
   const metaSiteUrl = site.siteMetadata.siteUrl
-  const metaImage = image || site.siteMetadata.image
+  const metaImage = image || opensitlogo
   const metaTwitter = creator || site.siteMetadata.twitter
 
   return (
@@ -42,9 +42,10 @@ function SEO({ description, title, creator, image }) {
       <html lang="en"/>
       {/* Icons */}
       <link rel="icon" type="image/png" href={favicon48} />
-      <link rel="apple-touch-icon" sizes="180x180" href={touchicon} />
+      <link rel="shortcut icon" type="image/x-icon" href={favicon48} />
 
       {/* iOS meta tags */}
+      <link rel="apple-touch-icon" sizes="180x180" href={touchicon} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-title" content="OpenSIT" />
 
