@@ -34,8 +34,8 @@ function SEO({ description, title, creator, image }) {
   const metaTitle = title || site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
   const metaSiteUrl = site.siteMetadata.siteUrl
-  const metaImage = image || opensitlogo
-  const metaTwitter = (creator) ? '@'+creator : site.siteMetadata.twitter
+  const metaImage = image ? image : metaSiteUrl+opensitlogo
+  const metaTwitter = creator ? '@'+creator : site.siteMetadata.twitter
 
   return (
     <Helmet>
