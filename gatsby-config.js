@@ -3,6 +3,9 @@ module.exports = {
     title: `OpenSIT`,
     description: `All SAP Inside Track Sessions in one place.`,
     author: `@oliver`,
+    siteUrl: 'https://opensit.net',
+    image: './images/opensit-logo_400x400.png',
+    twitter: '@opensit'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

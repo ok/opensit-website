@@ -16,7 +16,6 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
     <Layout>
       <div className="insideTrack-container">
         <SEO
-          type="summary"
           title="Recent SAP Inside Tracks"
         />
         <div className="row mb-2">
