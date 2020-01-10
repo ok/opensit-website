@@ -14,10 +14,9 @@ const SessionPage = ({ data }) => {
     <Layout>
       <div className="insideTrack-container">
         <SEO 
-          type = "summary_large_image" 
           title = { session.title } 
-          creator = { '@'+session.event.insideTrack.twitterId }
-          img = { getYtThumbnailUrl(session.recordingUrl) }
+          creator = { session.event.insideTrack.twitterId }
+          image = { getYtThumbnailUrl(session.recordingUrl) }
         />
         <div className="row">
           <div className="col-sm-12">

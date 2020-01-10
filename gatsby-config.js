@@ -3,6 +3,8 @@ module.exports = {
     title: `OpenSIT`,
     description: `All SAP Inside Track Sessions in one place.`,
     author: `@oliver`,
+    siteUrl: 'https://opensit.net',
+    twitter: '@opensit'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
