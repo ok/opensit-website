@@ -16,7 +16,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
     <Layout>
       <div className="insideTrack-container">
         <SEO
-          title="Recent SAP Inside Tracks"
+          title="Recent SAP Inside Tracks | OpenSIT"
         />
         <div className="row mb-2">
           <div className="col-12">
@@ -24,7 +24,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
           </div>
         </div>
         {data.gcms.events.map(event => (
-          <div className="row mb-2" key={event.id}>
+          <div className="row mb-2" key={ event.id }>
             <div className="col-sm-12">
             <EventVideos
               event = { event }

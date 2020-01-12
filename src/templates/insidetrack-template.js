@@ -16,7 +16,7 @@ const InsideTrackPage = ({ data }) => {
   return (
     <Layout>
       <SEO 
-        title = { insideTrack.name }
+        title = { insideTrack.name+`| OpenSIT` }
         creator = { (insideTrack.twitterId !== null) ? insideTrack.twitterId : "" }
       />
       <InsideTrackHeader
@@ -24,8 +24,8 @@ const InsideTrackPage = ({ data }) => {
       />
       <div className="insideTrack-container">
         { insideTrack.events.map(event => (
-          <div className="row mt-4" key={event.id}>
-            <div className={"col-sm-12"}>
+          <div className="row mt-4"  id={ event.year } key={ event.id }>
+            <div className="col-sm-12">
             <EventVideos
               event = { event }
               hashtag = { insideTrack.hashtag }
