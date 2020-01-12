@@ -14,7 +14,7 @@ const SessionPage = ({ data }) => {
     <Layout>
       <div className="insideTrack-container">
         <SEO 
-          title = { session.title } 
+          title = { session.title+`| OpenSIT` } 
           creator = { session.event.insideTrack.twitterId }
           image = { getYtThumbnailUrl(session.recordingUrl) }
         />
