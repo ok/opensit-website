@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import faviconleg from '../images/favicon.ico'
 import favicon48 from "../images/favicon-48x48.png"
 import touchicon from "../images/touchicon-180x180.png"
 import opensitlogo from "../images/opensit-logo_400x400.png"
@@ -41,6 +42,7 @@ function SEO({ description, title, creator, image }) {
     <Helmet>
       <html lang="en"/>
       {/* Icons */}
+      <link rel="icon" href={faviconleg} />
       <link rel="icon" type="image/png" href={favicon48} />
       <link rel="shortcut icon" type="image/x-icon" href={favicon48} />
 
