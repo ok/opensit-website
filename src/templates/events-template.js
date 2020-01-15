@@ -61,7 +61,7 @@ export const query = graphql`
           logo {
             url(
               transformation: {
-                image: { resize: { width: 50, height: 50, fit: scale } }
+                image: { resize: { width: 200, height: 200, fit: scale } }
               }
             )
             mimeType
