@@ -74,6 +74,10 @@ body {
     padding-left:1px;
 }
 
+.event-logo img {
+    max-width:50px;
+}
+
 .insideTrack-title {
     margin-bottom: .3em;
     line-height: 1;
@@ -108,6 +112,10 @@ body {
 
 .insideTrack-logoWrapper {
     margin-right:20px;
+}
+
+.insideTrack-logoWrapper img {
+    max-width:65px;
 }
 
 .big-icon {
@@ -167,9 +175,6 @@ body {
         margin-left:0;
         padding-left:0;
     }
-    .insideTrack-logoWrapper img {
-        max-width:90px;
-    }
     .insideTrack-identity {
         align-items: center;
     }
@@ -189,9 +194,6 @@ body {
         flex: 1 0 auto;
         max-width:50%;
         padding: 0px 8px 0px 8px;
-    }
-    .insideTrack-logo img {
-        max-width: 120px;
     }
     .insideTrack-view-more {
         max-width: 120px;
