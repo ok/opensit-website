@@ -70,10 +70,10 @@ export const query = graphql`
         date
         location
         insideTrack {
+          id
           city
           country
           hashtag
-          id
           name
           websiteUrl
           logo {
@@ -86,9 +86,9 @@ export const query = graphql`
           }
         }
         sessions(first: 4) {
+          id
           title
           speaker
-          id
           recordingUrl
           topics
         }

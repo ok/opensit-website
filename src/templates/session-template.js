@@ -46,8 +46,9 @@ const SessionPage = ({ data }) => {
         </div>
         <div className="row mt-5">
           <div className="col-sm-12">
+            {/* Related videos */}
             <div className="flex-header">
-              <h5>Other session from this event</h5>
+              <h5>Other sessions from this event</h5>
               <div className="ml-auto insideTrack-mobile-hidden">
                 <span className="align-bottom"><Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}#${sessionDate.getFullYear()}`}>View all</Link></span>
               </div>
@@ -66,7 +67,7 @@ const SessionPage = ({ data }) => {
 export const query = graphql`
   query singleSession($session_id: ID!, $event_id: ID!) {
     gcms {
-      session(where: {id: $session_id}) {
+      session(where: { id: $session_id }) {
         title
         speaker
         recordingUrl
@@ -87,11 +88,11 @@ export const query = graphql`
           scnName
         }
       }
-      event(where: {id: $event_id}) {
+      event(where: { id: $event_id }) {
         id
         location
         date
-        sessions(first: 4, where: {id_not: $session_id}) {
+        sessions(first: 4, where: { id_not: $session_id }) {
           id
           title
           speaker

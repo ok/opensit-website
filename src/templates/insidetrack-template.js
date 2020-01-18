@@ -45,9 +45,7 @@ const InsideTrackPage = ({ data }) => {
 export const query = graphql`
   query singleTrack($id: ID!) {
     gcms {
-      insideTrack(
-        where: {id: $id}
-      ) {
+      insideTrack(where: { id: $id }) {
         name
         city
         country
