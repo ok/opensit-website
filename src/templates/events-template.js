@@ -11,10 +11,6 @@ import VideoList from "../components/videos-list"
 import { getSlug } from "../components/helper.js"
 
 const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
-  data.gcms.events.forEach(event => {
-    var eventDate = new Date(event.date)
-    event.year = eventDate.getFullYear()
-  })
 
   return (
     <Layout>

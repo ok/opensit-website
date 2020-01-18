@@ -4,6 +4,9 @@ import PropTypes from "prop-types"
 import Video from "./video"
 
 const VideoList = ({ event, hashtag }) => {
+  var eventDate = new Date(event.date)
+  event.year = eventDate.getFullYear()
+
   return (
     <div className="card-deck">
       {event.sessions.map(session => (
