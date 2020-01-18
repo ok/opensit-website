@@ -11,6 +11,7 @@ exports.createPages = ({ graphql, actions }) => {
           id
           title
           event {
+            id
             date
             insideTrack {
               hashtag
@@ -51,7 +52,8 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/${getSlug(session.event.insideTrack.hashtag)}/${sessionDate.getFullYear()}/${ getSlug(session.title) }`,
           component: require.resolve(`./src/templates/session-template.js`),
           context: { 
-            id: session.id
+            session_id: session.id,
+            event_id: session.event.id
           }
         })
       })

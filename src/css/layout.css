@@ -227,8 +227,8 @@ body {
 /* credits: https://coderwall.com/p/asqkpg/responsive-youtube-video-embeds */
 @media (min-width: 992px) {
     .youtubevid {
-        width: 960px;
-        height: 540px; /* 720px */
+        width: 1100px;
+        height: 620px; /* 720px */
     }
 }
 

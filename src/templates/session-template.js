@@ -4,11 +4,14 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Speaker from "../components/speaker"
+import EventVideos from "../components/event-videos"
 import { getYtThumbnailUrl, getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
   const session = data.gcms.session;
+  const event = data.gcms.event;
   const sessionDate = new Date(session.event.date);
+  console.log(event)
 
   return (
     <Layout>
@@ -39,16 +42,24 @@ const SessionPage = ({ data }) => {
             </div>
           </div>
         </div>
+        <div className="row mt-4"  id={ event.year } key={ event.id }>
+          <div className="col-sm-12">
+          <EventVideos
+            event = { event }
+            hashtag = { event.insideTrack.hashtag }
+            preview = { false }
+          />
+          </div>
+        </div>
       </div>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query singleSession($id: ID!) {
+  query singleSession($session_id: ID!, $event_id: ID!) {
     gcms {
-      session(where: {id: $id}) 
-      {
+      session(where: {id: $session_id}) {
         title
         speaker
         recordingUrl
@@ -67,6 +78,20 @@ export const query = graphql`
           lastName
           twitterId
           scnName
+        }
+      }
+      event(where: {id: $event_id}) {
+        id
+        location
+        date
+        sessions(first: 4) {
+          id
+          title
+          speaker
+          recordingUrl
+        }
+        insideTrack {
+          hashtag
         }
       }
     }
