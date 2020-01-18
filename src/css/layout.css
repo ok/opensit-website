@@ -54,19 +54,16 @@ body {
     z-index:100;
 }
 
+.flex-header {
+    display: flex;
+    flex-flow: row nowrap;
+    background: #ffffff;
+}
+
 .event-title-wrapper {
     display: flex;
     flex-flow: column nowrap;
     margin-left:20px;
-}
-
-.event-header {
-    display: flex;
-    flex-flow: row nowrap;
-    padding-top:1em;
-    padding-bottom:1em;
-    margin-bottom:0px;
-    background: #ffffff;
 }
 
 .event-logo {
