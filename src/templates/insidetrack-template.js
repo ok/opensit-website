@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Moment from 'moment'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import EventVideos from "../components/event-videos"
+import VideoList from "../components/videos-list"
 import InsideTrackHeader from "../components/itrack-header"
 
 const InsideTrackPage = ({ data }) => {
@@ -26,11 +27,13 @@ const InsideTrackPage = ({ data }) => {
         { insideTrack.events.map(event => (
           <div className="row mt-4"  id={ event.year } key={ event.id }>
             <div className="col-sm-12">
-            <EventVideos
-              event = { event }
-              hashtag = { insideTrack.hashtag }
-              preview = { false }
-            />
+              <div className="flex-header">
+                <h5>{ Moment(event.date).format('D MMM YYYY') }</h5>
+              </div>
+              <VideoList
+                event = { event }
+                hashtag = { insideTrack.hashtag }
+              />
             </div>
           </div>
         ))}
@@ -42,9 +45,7 @@ const InsideTrackPage = ({ data }) => {
 export const query = graphql`
   query singleTrack($id: ID!) {
     gcms {
-      insideTrack(
-        where: {id: $id}
-      ) {
+      insideTrack(where: { id: $id }) {
         name
         city
         country

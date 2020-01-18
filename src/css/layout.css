@@ -54,19 +54,16 @@ body {
     z-index:100;
 }
 
+.flex-header {
+    display: flex;
+    flex-flow: row nowrap;
+    background: #ffffff;
+}
+
 .event-title-wrapper {
     display: flex;
     flex-flow: column nowrap;
     margin-left:20px;
-}
-
-.event-header {
-    display: flex;
-    flex-flow: row nowrap;
-    padding-top:1em;
-    padding-bottom:1em;
-    margin-bottom:0px;
-    background: #ffffff;
 }
 
 .event-logo {
@@ -122,6 +119,7 @@ body {
     margin-right: .5em;
     width: 1.3em;
     height: 1.3em;
+    margin-bottom: .1em;
 }
 
 .speaker-icon {
@@ -227,8 +225,8 @@ body {
 /* credits: https://coderwall.com/p/asqkpg/responsive-youtube-video-embeds */
 @media (min-width: 992px) {
     .youtubevid {
-        width: 960px;
-        height: 540px; /* 720px */
+        width: 1100px;
+        height: 620px; /* 720px */
     }
 }
 
