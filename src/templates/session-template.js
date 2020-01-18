@@ -57,6 +57,9 @@ const SessionPage = ({ data }) => {
               event = { event }
               hashtag = { event.insideTrack.hashtag }
             />
+            <div className="row mb-5 mt-n3 px-3 pt-0 insideTrack-desktop-hidden">
+              <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}#${sessionDate.getFullYear()}`}>View all</Link>
+            </div>
           </div>
         </div>
       </div>
