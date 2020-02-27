@@ -26,7 +26,7 @@ const SessionPage = ({ data }) => {
               {/* List of speakers and their profiles */}
               {session.speakers.length ? (
                 <span>{session.speakers.map((speaker, i) => (
-                  [i > 0 && " & ",<Speaker speaker={speaker} />]
+                  [i > 0 && " & ",<Speaker key={speaker.id} speaker={speaker} />]
                 ))}</span>
               ) : (
                 <span>{session.speaker}</span>
@@ -85,6 +85,7 @@ export const query = graphql`
           }
         }
         speakers {
+          id
           firstName
           lastName
           twitterId
