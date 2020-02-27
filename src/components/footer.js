@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { FaHeart, FaTwitter } from 'react-icons/fa';
+import { FaHeart, FaTwitter, FaRss } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const Footer = () => (
@@ -20,6 +20,7 @@ const Footer = () => (
           <div className="col text-right">
             <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
               <a href="https://twitter.com/opensitnet" className="text-secondary"><FaTwitter/></a>
+              <a href="https://opensit.net/rss.xml" className="text-secondary"><FaRss/></a>
             </IconContext.Provider>
           </div>
         </div>
