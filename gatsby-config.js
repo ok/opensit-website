@@ -63,6 +63,7 @@ module.exports = {
                 allSessions:gcms {
                   sessions(
                     orderBy: createdAt_DESC
+                    first: 50
                   ) {
                     title
                     event {
