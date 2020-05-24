@@ -15,8 +15,8 @@ const Footer = () => (
           </div>
           <div className="col-3 text-right">
             <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
-              <a href="https://twitter.com/opensitnet" className="text-secondary" target="_blank"><FaTwitter/></a>
-              <a href="https://opensit.net/rss.xml" className="text-secondary"><FaRss/></a>
+              <a href="https://twitter.com/opensitnet" className="text-secondary" aria-label="Link to Twitter"><FaTwitter/></a>
+              <a href="https://opensit.net/rss.xml" className="text-secondary" aria-label="Link to RSS Feed"><FaRss/></a>
             </IconContext.Provider>
           </div>
         </div>
