@@ -12,13 +12,13 @@ const InsideTrackHeader = ({ insideTrack }) => {
       <div>
         <h4>{insideTrack.name}</h4>
         <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
-          {insideTrack.twitterId !== null && insideTrack.twitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrack.twitterId}><FaTwitter/></a>)}
+          {insideTrack.twitterId !== null && insideTrack.twitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrack.twitterId} aria-label="Link to Twitter"><FaTwitter/></a>)}
         </IconContext.Provider>
         <IconContext.Provider value={{ className: "big-icon youtube-icon" }}>
-          {insideTrack.youTubeUrl !== null && insideTrack.youTubeUrl.length !== 0 && (<a href={insideTrack.youTubeUrl}><FaYoutube/></a>)}
+          {insideTrack.youTubeUrl !== null && insideTrack.youTubeUrl.length !== 0 && (<a href={insideTrack.youTubeUrl} aria-label="Link to YouTube"><FaYoutube/></a>)}
         </IconContext.Provider>
         <IconContext.Provider value={{ className: "big-icon link-icon" }}>
-          {insideTrack.websiteUrl !== null && insideTrack.websiteUrl.length !== 0 && (<a href={insideTrack.websiteUrl}><FaLink/></a>)}
+          {insideTrack.websiteUrl !== null && insideTrack.websiteUrl.length !== 0 && (<a href={insideTrack.websiteUrl} aria-label="Link to website"><FaLink/></a>)}
         </IconContext.Provider>
         <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a>
       </div>
