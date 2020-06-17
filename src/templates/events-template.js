@@ -84,7 +84,6 @@ export const query = graphql`
         sessions(first: 4) {
           id
           title
-          speaker
           recordingUrl
           topics
         }

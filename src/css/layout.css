@@ -125,7 +125,6 @@ body {
 .speaker-icon {
     margin-bottom: .2em;
     margin-left: .3em;
-    margin-right: .3em;
     width: 1.0em;
     height: 1.0em;
 }
@@ -136,6 +135,10 @@ body {
 
 .youtube-icon {
     color: #FF0000;
+}
+
+.linkedin-icon {
+    color: #2867B2;
 }
 
 .link-icon {
