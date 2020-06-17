@@ -24,13 +24,9 @@ const SessionPage = ({ data }) => {
           <div className="col-sm-12">
             <div className="insideTrack-videoWrapper">
               {/* List of speakers and their profiles */}
-              {session.speakers.length ? (
-                <span>{session.speakers.map((speaker, i) => (
-                  [i > 0 && " & ",<Speaker key={speaker.id} speaker={speaker} />]
-                ))}</span>
-              ) : (
-                <span>{session.speaker}</span>
-              )}
+              <span>{session.speakers.map((speaker, i) => (
+                [i > 0 && " & ",<Speaker key={speaker.id} speaker={speaker} />]
+              ))}</span>
               {/* Session title, SIT and full width video */}
               <h4>{session.title}</h4>
               <p><Link to={`/${getSlug(session.event.insideTrack.hashtag)}`}>{session.event.insideTrack.name} {sessionDate.getFullYear()}</Link></p>
@@ -72,7 +68,6 @@ export const query = graphql`
     gcms {
       session(where: { id: $session_id }) {
         title
-        speaker
         recordingUrl
         slidesUrl
         topics
@@ -89,6 +84,7 @@ export const query = graphql`
           firstName
           lastName
           twitterId
+          linkedInName
           scnName
         }
       }
@@ -99,7 +95,6 @@ export const query = graphql`
         sessions(first: 4, where: { id_not: $session_id }) {
           id
           title
-          speaker
           recordingUrl
         }
         insideTrack {

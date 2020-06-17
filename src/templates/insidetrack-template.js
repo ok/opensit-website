@@ -68,7 +68,6 @@ export const query = graphql`
           sessions {
             id
             title
-            speaker
             recordingUrl
           }
         }
