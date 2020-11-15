@@ -1,0 +1,21 @@
+fragment Event on Event {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  date
+  location
+  insideTrack {
+    ... on InsideTrack {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  sessions {
+    ... on Session {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}

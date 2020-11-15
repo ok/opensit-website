@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `OpenSIT`,
@@ -16,12 +18,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'GCMS',
-        fieldName: 'gcms',
-        url: 'https://api-euwest.graphcms.com/v1/ck07yks3t0aad01cb1pnf3p23/master',
-      },
+      resolve: 'gatsby-source-graphcms',
+        options: {
+          endpoint: process.env.GRAPHCMS_ENDPOINT,
+          token: process.env.GRAPHCMS_TOKEN
+        },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

@@ -1,0 +1,18 @@
+fragment Person on Person {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  sessions {
+    ... on Session {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  firstName
+  lastName
+  twitterId
+  scnName
+  linkedInName
+}

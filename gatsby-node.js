@@ -6,8 +6,8 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise(resolve => {
     graphql(`
     {
-      allSessions:gcms {
-        sessions {
+      sessions: allGraphCmsSession {
+         nodes {
           id
           title
           event {
@@ -19,22 +19,22 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-      allInsideTracks:gcms {
-        insideTracks {
+      insideTracks: allGraphCmsInsideTrack {
+        nodes {
           id
           hashtag
         }
       }
-      allEvents:gcms {
-        events {
+      events: allGraphCmsEvent {
+        nodes {
           id
         }
       }
     }
     `).then(result => {
 
-      // console.log("processing insideTracks...")
-      result.data.allInsideTracks.insideTracks.forEach(insideTrack => {
+      // console.log(result.data.insideTracks)
+      result.data.insideTracks.nodes.forEach(insideTrack => {
         createPage({
           path: `/${getSlug(insideTrack.hashtag)}`,
           component: require.resolve(`./src/templates/insidetrack-template.js`),
@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       // console.log("processing sessions...")
-      result.data.allSessions.sessions.forEach((session) => {
+      result.data.sessions.nodes.forEach((session) => {
         const sessionDate = new Date(session.event.date)
         createPage({
           // /sitber/2019/some_session_title
@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       // console.log("processing events...")
-      const events = result.data.allEvents.events;
+      const events = result.data.events.nodes;
       const eventsPerPage = 4;
       const numPages = Math.ceil(events.length / eventsPerPage);
 

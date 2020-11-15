@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 
 import Video from "./video"
 
-const VideoList = ({ event, hashtag }) => {
+const VideoList = ({ event, hashtag, limit=undefined }) => {
   var eventDate = new Date(event.date)
   event.year = eventDate.getFullYear()
 
   return (
     <div className="card-deck">
-      {event.sessions.map(session => (
+      {event.sessions.slice(0, limit).map((session, i) => (
         <Video.Player
           key = { session.id }
           sessionId = { session.id }

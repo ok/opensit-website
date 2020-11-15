@@ -1,0 +1,27 @@
+fragment InsideTrack on InsideTrack {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  name
+  logo {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  country
+  city
+  hashtag
+  twitterId
+  websiteUrl
+  youTubeUrl
+  events {
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}
