@@ -1,5 +1,5 @@
 import React from "react"
-import { FaHeart, FaTwitter, FaRss } from 'react-icons/fa';
+import { FaHeart, FaRss } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const Footer = () => (
