@@ -44,8 +44,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allSessions } }) => {
-              return allSessions.sessions.map(session => {
+            serialize: ({ query: { site, sessions } }) => {
+              return sessions.nodes.map(session => {
                 const date = new Date(session.event.date)
                 const slug = `/${getSlug(session.event.insideTrack.hashtag)}/${date.getFullYear()}/${ getSlug(session.title) }`
                 const speaker = session.speakers.map((speaker) => (
@@ -61,11 +61,11 @@ module.exports = {
             },
             query: `
               {
-                allSessions:gcms {
-                  sessions(
-                    orderBy: createdAt_DESC
-                    first: 50
+                sessions: allGraphCmsSession(
+                  sort: {order: DESC, fields: createdAt},
+                  limit: 50,
                   ) {
+                  nodes {
                     title
                     event {
                       date

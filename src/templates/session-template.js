@@ -8,7 +8,6 @@ import VideoList from "../components/videos-list"
 import { getYtThumbnailUrl, getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
-  console.log(data)
   const session = data.session.nodes[0];
   const event = data.event.nodes[0];
   const sessionDate = new Date(event.date);

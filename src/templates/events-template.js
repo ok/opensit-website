@@ -11,7 +11,6 @@ import VideoList from "../components/videos-list"
 import { getSlug } from "../components/helper.js"
 
 const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
-  console.log(data);
   return (
     <Layout>
       <div className="insideTrack-container">
