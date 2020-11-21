@@ -1,15 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import gatsbyLogo from "../images/gatsbyjs-logo.png"
-import githubLogo from "../images/github-logo.png"
-import graphcmsLogo from "../images/graphcms-logo.png"
-import netlifyLogo from "../images/netlify-logo.png"
-
-const AboutPage = () => (
+const AboutPage = ({ data }) => {
+  console.log(JSON.stringify(data));
+  return (
   <Layout>
     <SEO title="OpenSIT: About" />
     <div className="insideTrack-container">
@@ -30,20 +28,56 @@ const AboutPage = () => (
       <p>All listed session content is only available thanks to the many organisers of SAP Inside Tracks around the world, who are organising the professional full day events with 50-150 participants, while having a regular job in the SAP ecosystem. This site wouldn't exist without all of you.</p>
       <p>The <a href="https://opensit.net">opensit.net</a> website is build using <a href="https://jamstack.wtf/" target="_blank" rel="noopener noreferrer">JAMstack principles</a>. Modern web development tools enable the building of highly scalable web sites with fairly low effort at no cost. <a href="https://opensit.net">opensit.net</a> is build using these freely available frameworks and services:</p>
       <div className="mb-2">
-        <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer"><img src={gatsbyLogo} alt="GatsbyJS logo and website" width="250"></img></a>
+        <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer"><Img fixed={data.gatsbylogo.childImageSharp.fixed} aria-label="Gatsby logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer"><img src={githubLogo} alt="GitHub logo and website" width="250"></img></a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Img fixed={data.githublogo.childImageSharp.fixed} aria-label="Github logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://graphcms.com" target="_blank" rel="noopener noreferrer"><img src={graphcmsLogo} alt="GraphCMS logo and website" width="250"></img></a>
+        <a href="https://graphcms.com" target="_blank" rel="noopener noreferrer"><Img fixed={data.graphcmslogo.childImageSharp.fixed} aria-label="GraphCMS logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"><img src={netlifyLogo} alt="Netlify logo and website" width="250"></img></a>
+        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"><Img fixed={data.netlifylogo.childImageSharp.fixed} aria-label="Netlify logo" /></a>
       </div>
       <p className="pb-5"><a href="https://opensit.net">opensit.net</a> has been designed and implemented by Colin Krawchuk und <a href="https://twitter.com/oliver" target="_blank" rel="noopener noreferrer">Oliver Kohl</a>. The site was officially launched at SAP Inside Track Netherlands on 23.11.2019.</p>
     </div>
   </Layout>
-)
+)}
 
+export const query = graphql`
+  query {
+    gatsbylogo: file( name: { eq: "gatsbyjs-logo" }) {
+      childImageSharp {
+        fixed(width: 250) 
+        {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    githublogo: file( name: { eq: "github-logo" }) {
+      childImageSharp {
+        fixed(width: 250) 
+        {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    netlifylogo: file( name: { eq: "netlify-logo" }) {
+      childImageSharp {
+        fixed(width: 250) 
+        {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    graphcmslogo: file( name: { eq: "graphcms-logo" }) {
+      childImageSharp {
+        fixed(width: 250) 
+        {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 export default AboutPage

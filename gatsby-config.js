@@ -27,6 +27,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-flow',
+    'gatsby-image',
     {
       resolve: `gatsby-plugin-feed`,
       options: {
