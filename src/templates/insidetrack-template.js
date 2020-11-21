@@ -8,7 +8,7 @@ import VideoList from "../components/videos-list"
 import InsideTrackHeader from "../components/itrack-header"
 
 const InsideTrackPage = ({ data }) => {
-  const insideTrack = data.gcms.insideTrack
+  const insideTrack = data.insideTrack.nodes[0]
   insideTrack.events.forEach(event => {
     const eventDate = new Date(event.date)
     event.year = eventDate.getFullYear()
@@ -43,9 +43,11 @@ const InsideTrackPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query singleTrack($id: ID!) {
-    gcms {
-      insideTrack(where: { id: $id }) {
+  query singleTrack($id: String!) {
+    insideTrack: allGraphCmsInsideTrack(
+      filter: { id: { eq: $id }}
+      ) {
+      nodes {
         name
         city
         country
@@ -54,14 +56,10 @@ export const query = graphql`
         youTubeUrl
         hashtag
         logo {
-          url(
-            transformation: {
-              image: { resize: { width: 300, height: 300, fit: scale } }
-            }
-          )
+          url
           mimeType
         }
-        events(orderBy: date_DESC) {
+        events {
           id
           location
           date

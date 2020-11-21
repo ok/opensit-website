@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `OpenSIT`,
@@ -16,12 +18,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'GCMS',
-        fieldName: 'gcms',
-        url: 'https://api-euwest.graphcms.com/v1/ck07yks3t0aad01cb1pnf3p23/master',
-      },
+      resolve: 'gatsby-source-graphcms',
+        options: {
+          endpoint: process.env.GRAPHCMS_ENDPOINT,
+          token: process.env.GRAPHCMS_TOKEN
+        },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -43,8 +44,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allSessions } }) => {
-              return allSessions.sessions.map(session => {
+            serialize: ({ query: { site, sessions } }) => {
+              return sessions.nodes.map(session => {
                 const date = new Date(session.event.date)
                 const slug = `/${getSlug(session.event.insideTrack.hashtag)}/${date.getFullYear()}/${ getSlug(session.title) }`
                 const speaker = session.speakers.map((speaker) => (
@@ -60,11 +61,11 @@ module.exports = {
             },
             query: `
               {
-                allSessions:gcms {
-                  sessions(
-                    orderBy: createdAt_DESC
-                    first: 50
+                sessions: allGraphCmsSession(
+                  sort: {order: DESC, fields: createdAt},
+                  limit: 50,
                   ) {
+                  nodes {
                     title
                     event {
                       date

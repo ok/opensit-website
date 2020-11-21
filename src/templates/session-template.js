@@ -8,9 +8,9 @@ import VideoList from "../components/videos-list"
 import { getYtThumbnailUrl, getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
 
 const SessionPage = ({ data }) => {
-  const session = data.gcms.session;
-  const event = data.gcms.event;
-  const sessionDate = new Date(session.event.date);
+  const session = data.session.nodes[0];
+  const event = data.event.nodes[0];
+  const sessionDate = new Date(event.date);
 
   return (
     <Layout>
@@ -52,6 +52,7 @@ const SessionPage = ({ data }) => {
             <VideoList
               event = { event }
               hashtag = { event.insideTrack.hashtag }
+              limit = { 4 }
             />
             <div className="row mb-5 mt-n3 px-3 pt-0 insideTrack-desktop-hidden">
               <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}#${sessionDate.getFullYear()}`}>View all</Link>
@@ -64,9 +65,11 @@ const SessionPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query singleSession($session_id: ID!, $event_id: ID!) {
-    gcms {
-      session(where: { id: $session_id }) {
+  query singleSession($session_id: String!, $event_id: String!) {
+    session: allGraphCmsSession(
+      filter: { id: {eq: $session_id }}
+      ) {
+      nodes {
         title
         recordingUrl
         slidesUrl
@@ -88,11 +91,15 @@ export const query = graphql`
           scnName
         }
       }
-      event(where: { id: $event_id }) {
+    }
+    event: allGraphCmsEvent(
+      filter: { id: {eq: $event_id }}
+      ) {
+      nodes {
         id
         location
         date
-        sessions(first: 4, where: { id_not: $session_id }) {
+        sessions {
           id
           title
           recordingUrl

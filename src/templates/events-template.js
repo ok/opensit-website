@@ -11,7 +11,6 @@ import VideoList from "../components/videos-list"
 import { getSlug } from "../components/helper.js"
 
 const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
-
   return (
     <Layout>
       <div className="insideTrack-container">
@@ -23,7 +22,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
             <h5>Recent SAP Inside Tracks</h5>
           </div>
         </div>
-        {data.gcms.events.map(event => (
+        {data.events.nodes.map(event => (
           <div className="row mb-2" key={ event.id }>
             <div className="col-sm-12">
               <div className="flex-header pt-3 pb-3 bg-white element-sticky">
@@ -41,6 +40,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
               <VideoList
                 event = { event }
                 hashtag = { event.insideTrack.hashtag }
+                limit = { 4 }
               />
               <div className="row mb-5 mt-n3 px-3 pt-0 insideTrack-desktop-hidden">
                 <Link className="pt-1" to={`/${getSlug(event.insideTrack.hashtag)}`}>View all</Link>
@@ -56,12 +56,12 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
 
 export const query = graphql`
   query latestEvents($skip: Int!, $limit: Int!) {
-    gcms {
-      events(
-        orderBy: date_DESC
-        first: $limit
-        skip: $skip
+    events: allGraphCmsEvent(
+      sort: {order: DESC, fields: date},
+      limit: $limit,
+      skip: $skip
       ) {
+      nodes {
         id
         date
         location
@@ -73,15 +73,11 @@ export const query = graphql`
           name
           websiteUrl
           logo {
-            url(
-              transformation: {
-                image: { resize: { width: 200, height: 200, fit: scale } }
-              }
-            )
+            url
             mimeType
           }
         }
-        sessions(first: 4) {
+        sessions {
           id
           title
           recordingUrl

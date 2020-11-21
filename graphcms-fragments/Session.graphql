@@ -1,0 +1,23 @@
+fragment Session on Session {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  title
+  topics
+  recordingUrl
+  slidesUrl
+  speakers {
+    ... on Person {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+  event {
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}
