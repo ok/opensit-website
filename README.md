@@ -27,3 +27,25 @@ This repo contains the OpenSIT website, build using Gatsby.js. All content is ma
 3. **Give Feedback.**
 
     If you find something that could be improved, please [file an issue](./issues/new) or submit a pull request!
+
+## npm cheat sheet
+
+    Update packages to latest compatible version
+
+    ```sh
+    npm update
+    ```
+
+    Bump package dependencies to latest version
+
+    ```sh
+    npx npm-check-updates -u
+    ```
+
+    Bump package dependencies to latest minor version
+
+    ```sh
+    npx npm-check-updates -u --target minor
+    ```
+
+    source: https://www.npmjs.com/package/npm-check-updates
