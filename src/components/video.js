@@ -1,19 +1,8 @@
-//@flow
 import { Link } from "gatsby";
 import React from "react";
-import { getYtThumbnailUrl, getSlug } from "../components/helper.js"
+import { getYtThumbnailUrl, getSlug } from "../components/helper.js";
 
-type Props = {
-  sessionId: string,
-  sessionTitle: string,
-  sessionUrl: string,
-  hashtag: string,
-  eventYear: number
-};
-
-const Player = (props: Props) => {
-  const { sessionId, sessionTitle, sessionUrl, hashtag, eventYear } = props;
-
+const Player = ({ sessionId, sessionTitle, sessionUrl, hashtag, eventYear }) => {
   return (
     <div className="card card-custom-style" key={sessionId}>
     <Link to={`/${getSlug(hashtag)}/${eventYear}/${ getSlug(sessionTitle) }`}>
@@ -26,4 +15,4 @@ const Player = (props: Props) => {
   )
 }
 
-export default { Player }
+export default Player

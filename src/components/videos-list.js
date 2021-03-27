@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import Video from "./video"
+import Player from "./video"
 
 const VideoList = ({ event, hashtag, limit=undefined }) => {
   var eventDate = new Date(event.date)
@@ -10,7 +9,7 @@ const VideoList = ({ event, hashtag, limit=undefined }) => {
   return (
     <div className="card-deck">
       {event.sessions.slice(0, limit).map((session, i) => (
-        <Video.Player
+        <Player
           key = { session.id }
           sessionId = { session.id }
           sessionTitle = { session.title }
