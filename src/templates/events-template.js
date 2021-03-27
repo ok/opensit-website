@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Moment from 'moment'
-
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -27,7 +26,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
             <div className="col-sm-12">
               <div className="flex-header pt-3 pb-3 bg-white element-sticky">
                 <div className="event-logo">
-                  <img src={event.insideTrack.logo.url} alt="inside track logo"></img>
+                  <GatsbyImage image={getImage(event.insideTrack.logo)} alt="inside track logo"/>
                 </div>
                 <div className="event-title-wrapper">
                   <div><h4 className="mb-0"><Link className={"text-dark"} to={`/${getSlug(event.insideTrack.hashtag)}`}>{event.insideTrack.name}</Link></h4></div>
@@ -47,7 +46,8 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
               </div>
             </div>
           </div>
-        ))}
+          )
+        )}
       </div>
       <Pagination currentPage={currentPage} numPages={numPages}/>
     </Layout>
@@ -73,8 +73,10 @@ export const query = graphql`
           name
           websiteUrl
           logo {
-            url
-            mimeType
+            gatsbyImageData(
+              width: 50
+              layout: FIXED
+            )
           }
         }
         sessions {

@@ -24,10 +24,8 @@ module.exports = {
           token: process.env.GRAPHCMS_TOKEN
         },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-flow',
-    'gatsby-image',
+    'gatsby-plugin-image',
     {
       resolve: `gatsby-plugin-feed`,
       options: {
