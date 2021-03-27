@@ -1,17 +1,8 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-import faviconleg from '../images/favicon.ico'
-import favicon48 from "../images/favicon-48x48.png"
 import touchicon from "../images/touchicon-180x180.png"
 import opensitlogo from "../images/opensit-logo_400x400.png"
 
@@ -41,10 +32,7 @@ function SEO({ description, title, creator, image }) {
   return (
     <Helmet>
       <html lang="en"/>
-      {/* Icons */}
-      <link rel="icon" href={faviconleg} />
-      <link rel="icon" type="image/png" href={favicon48} />
-      <link rel="shortcut icon" type="image/x-icon" href={favicon48} />
+      {/* Favicons are managed by gatsby-plugin-manifest */}
 
       {/* iOS meta tags */}
       <link rel="apple-touch-icon" sizes="180x180" href={touchicon} />
