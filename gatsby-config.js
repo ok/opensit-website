@@ -11,6 +11,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `OpenSIT`,
+        short_name: `OpenSIT`,
+        description: `All SAP Inside Track Sessions in one place.`,
+        lang: `en`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        display: `standalone`,
+        icon: `src/images/opensit-favicon_400x400.png`
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
