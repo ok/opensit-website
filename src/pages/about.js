@@ -26,7 +26,7 @@ const AboutPage = ({ data }) => {
 
       <h3>Thanks</h3>
       <p>All listed session content is only available thanks to the many organisers of SAP Inside Tracks around the world, who are organising the professional full day events with 50-150 participants, while having a regular job in the SAP ecosystem. This site wouldn't exist without all of you.</p>
-      <p>The <a href="https://opensit.net">opensit.net</a> website is build using <a href="https://jamstack.wtf/" target="_blank" rel="noopener noreferrer">JAMstack principles</a>. Modern web development tools enable the building of highly scalable web sites with fairly low effort at no cost. <a href="https://opensit.net">opensit.net</a> is build using these freely available frameworks and services:</p>
+      <p>The site code is <a href="https://github.com/ok/opensit" target="_blank" rel="noopener noreferrer">available on github</a> and has been built using <a href="https://jamstack.wtf/" target="_blank" rel="noopener noreferrer">JAMstack principles</a>. Modern web development tools enable the building of highly scalable web sites with fairly low effort at no cost. <a href="https://opensit.net">opensit.net</a> is build using these freely available frameworks and services:</p>
       <div className="mb-2">
         <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/gatsbyjs-logo.png" placeholder="blurred" width={250} aria-label="Gatsby logo" /></a>
       </div>
@@ -39,6 +39,8 @@ const AboutPage = ({ data }) => {
       <div className="mb-2">
         <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/netlify-logo.png" placeholder="blurred" width={250} aria-label="Netlify logo" /></a>
       </div>
+      <p></p>
+      
       <p className="pb-5"><a href="https://opensit.net">opensit.net</a> has been designed and implemented by Colin Krawchuk und <a href="https://twitter.com/oliver" target="_blank" rel="noopener noreferrer">Oliver Kohl</a>. The site was officially launched at SAP Inside Track Netherlands on 23.11.2019.</p>
     </div>
   </Layout>
