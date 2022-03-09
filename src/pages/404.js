@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const NotFoundPage = ({ data }) => (
   <Layout>
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
     <div className="insideTrack-container">
       <div className="row justify-content-center align-items-center" style={{marginTop: `3rem`,}}>
         <div className="col col-lg-3">

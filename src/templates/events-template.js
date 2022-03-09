@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Moment from 'moment'
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Pagination from "../components/pagination"
 import VideoList from "../components/videos-list"
 import { getSlug } from "../components/helper.js"
@@ -13,7 +13,7 @@ const EventsPage = ({ pageContext: { currentPage, numPages }, data }) => {
   return (
     <Layout>
       <div className="insideTrack-container">
-        <SEO
+        <Seo
           title="Recent SAP Inside Tracks | OpenSIT"
         />
         <div className="row mb-2">

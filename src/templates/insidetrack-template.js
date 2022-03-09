@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import VideoList from "../components/videos-list"
 
 const InsideTrackPage = ({ data }) => {
@@ -20,7 +20,7 @@ const InsideTrackPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO 
+      <Seo 
         title = { insideTrack.name+` | OpenSIT` }
         creator = { (insideTrack.twitterId !== null) ? insideTrack.twitterId : "" }
       />

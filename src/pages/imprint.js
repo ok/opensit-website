@@ -1,11 +1,11 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const PrivacyPage = () => (
   <Layout>
-    <SEO title="OpenSIT: Imprint" />
+    <Seo title="OpenSIT: Imprint" />
     <div className="insideTrack-container">
     <h3>Legal Disclosure</h3>
     <p>Information in accordance with Section 5 TMG</p>

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Speaker from "../components/speaker"
 import VideoList from "../components/videos-list"
 import { getYtThumbnailUrl, getYtEmbedUrl, getSlug, getDisplayName } from "../components/helper.js"
@@ -15,7 +15,7 @@ const SessionPage = ({ data }) => {
   return (
     <Layout>
       <div className="insideTrack-container">
-        <SEO 
+        <Seo 
           title = { session.title+` | OpenSIT` } 
           creator = { session.event.insideTrack.twitterId }
           image = { getYtThumbnailUrl(session.recordingUrl) }

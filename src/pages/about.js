@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const AboutPage = ({ data }) => {
   console.log(JSON.stringify(data));
   return (
   <Layout>
-    <SEO title="OpenSIT: About" />
+    <Seo title="OpenSIT: About" />
     <div className="insideTrack-container">
       <h3>About OpenSIT</h3>
       <p><a href="https://community.sap.com/events/inside-track/about-inside-track" target="_blank" rel="noopener noreferrer">SAP Inside Tracks</a> are typically one day conferences, locally organised by passionate SAP community members, where knowledge and experience is being shared in talks or sessions. To make their conference content more broadly accessible, an increasing number of SAP Inside Tracks have started to live stream and record these sessions.</p>
