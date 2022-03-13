@@ -7,7 +7,7 @@ import { IconContext } from "react-icons";
 const Header = ({ siteTitle }) => (
   <header className="bg-dark header">
     <div className="insideTrack-container">
-    <Navbar className="px-0" bg="dark" variant="dark" expand="md">
+    <Navbar className="px-0" bg="dark" variant="dark" expand="sm">
       <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
