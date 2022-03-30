@@ -1,5 +1,7 @@
-const path = require(`path`)
+const fs = require("fs");
+const path = require("path");
 
+// Use the createPages Node API to generate all pages with data from GraphCMS
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -7,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     graphql(`
     {
       sessions: allGraphCmsSession {
-         nodes {
+        nodes {
           id
           title
           event {
@@ -78,6 +80,58 @@ exports.createPages = ({ graphql, actions }) => {
       resolve();
     })
   })
+};
+
+// Use the onPostBuild Node API, which runs after the build has been completed.
+exports.onPostBuild = async ({ graphql }) => {
+  await graphql(`
+    {
+      allSessions: allGraphCmsSession {
+        nodes {
+          id: remoteId
+        }
+      }
+      latestSessions: allGraphCmsEvent(sort: {fields: createdAt, order: DESC}, limit: 1) {
+        nodes {
+          sessions {
+            id: remoteId
+          }
+        }
+      }
+    }
+  `).then((result) => {
+    const allSessions = result.data.allSessions.nodes;
+    const latestSessions = result.data.latestSessions.nodes[0].sessions;
+    console.log(result.data.latestSessions);
+    
+    const sessionsPath = "./public/sessions";
+    if (!fs.existsSync(sessionsPath)) fs.mkdirSync(sessionsPath);
+
+    fs.writeFileSync(`${sessionsPath}/sessions.json`, JSON.stringify(allSessions));
+    randomSessions = shuffle(allSessions);
+    fs.writeFileSync(`${sessionsPath}/random_sessions.json`, JSON.stringify(randomSessions));
+    fs.writeFileSync(`${sessionsPath}/tweet_sessions.json`, JSON.stringify(latestSessions.concat(randomSessions)));
+  })
+};
+
+// Fisher-Yates Shuffle.
+// credits: https://stackoverflow.com/questions/2450954/
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
 
 // figure out how this ESM import works https://github.com/gatsbyjs/gatsby/issues/10391
