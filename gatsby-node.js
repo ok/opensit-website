@@ -82,6 +82,11 @@ exports.createPages = ({ graphql, actions }) => {
   })
 };
 
+// This is a session list generator to be used for session promotion on Twitter.
+// Output is a list of sessions ID that that can be promoted in sequence:
+// First prio are sessions from the latest SIT published (trigger of site build)
+// After that we want to randomly promote sessions, with a fair destribution
+//
 // Use the onPostBuild Node API, which runs after the build has been completed.
 exports.onPostBuild = async ({ graphql }) => {
   await graphql(`
@@ -100,19 +105,30 @@ exports.onPostBuild = async ({ graphql }) => {
       }
     }
   `).then((result) => {
-    const allSessions = result.data.allSessions.nodes;
-    const latestSessions = result.data.latestSessions.nodes[0].sessions;
-    console.log(result.data.latestSessions);
-    
     const sessionsPath = "./public/sessions";
     if (!fs.existsSync(sessionsPath)) fs.mkdirSync(sessionsPath);
 
+    const allSessions = result.data.allSessions.nodes;
+    const latestSessions = result.data.latestSessions.nodes[0].sessions;
+    
+    // write out some session lists in case they could be useful
     fs.writeFileSync(`${sessionsPath}/sessions.json`, JSON.stringify(allSessions));
     randomSessions = shuffle(allSessions);
     fs.writeFileSync(`${sessionsPath}/random_sessions.json`, JSON.stringify(randomSessions));
-    fs.writeFileSync(`${sessionsPath}/tweet_sessions.json`, JSON.stringify(latestSessions.concat(randomSessions)));
+
+    // this is the JSON object to be used for the Twitter bot
+    var tweet_sessions = {
+      "created_at" : daysIntoYear(new Date()), // we need an anker for our index
+      "sessions" : latestSessions.concat(randomSessions)
+    }
+    fs.writeFileSync(`${sessionsPath}/tweet_sessions.json`, JSON.stringify(tweet_sessions));
   })
 };
+
+// credits: https://stackoverflow.com/questions/8619879
+function daysIntoYear(date) {
+  return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
+} 
 
 // Fisher-Yates Shuffle.
 // credits: https://stackoverflow.com/questions/2450954/
