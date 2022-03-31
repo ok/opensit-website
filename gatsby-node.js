@@ -118,7 +118,7 @@ exports.onPostBuild = async ({ graphql }) => {
 
     // this is the JSON object to be used for the Twitter bot
     var tweet_sessions = {
-      "created_at" : daysIntoYear(new Date()), // we need an anker for our index
+      "created_at" : Date.now(), // we need an anker for our index
       "sessions" : latestSessions.concat(randomSessions)
     }
     fs.writeFileSync(`${sessionsPath}/tweet_sessions.json`, JSON.stringify(tweet_sessions));
