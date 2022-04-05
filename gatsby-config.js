@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-graphcms',
         options: {
-          endpoint: getEnvEndpoint(process.env.OPENSIT_ENV),
-          token: getEnvApiToken(process.env.OPENSIT_ENV)
+          endpoint: process.env.GRAPHCMS_ENDPOINT,
+          token: process.env.GRAPHCMS_TOKEN
         },
     },
     `gatsby-plugin-sharp`,
@@ -102,28 +102,6 @@ module.exports = {
       },
     },
   ],
-}
-
-function getEnvEndpoint(env) {
-  let ep = process.env.GRAPHCMS_ENDPOINT_MASTER;
-  if (env == "preview") 
-    ep = process.env.GRAPHCMS_ENDPOINT_PREVIEW;
-  if (env == "staging") 
-    ep = process.env.GRAPHCMS_ENDPOINT_STAGING;
-  // console.log("endpoint: " + ep);
-  console.log("using endpoint for env " + env);
-  return ep;
-}
-
-function getEnvApiToken(env) {
-  let token = process.env.GRAPHCMS_APITOKEN_MASTER_PROD;
-  if (env == "preview")
-    token = process.env.GRAPHCMS_APITOKEN_MASTER_PREVIEW;
-  if (env == "staging")
-    token = process.env.GRAPHCMS_APITOKEN_STAGING_PROD;
-  // console.log("token: " + token);
-  console.log("using token for env " + env);
-  return token;
 }
 
 // figure out how this ESM import works https://github.com/gatsbyjs/gatsby/issues/10391

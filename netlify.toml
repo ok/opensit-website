@@ -1,7 +1,0 @@
-[context.preview] # for draft content preview
-  command = "echo 'content preview'"
-  OPENSIT_ENV = "preview"
-
-[context.staging] # for CMS schema dev
-  command = "echo 'CMS staging env'"
-  OPENSIT_ENV = "staging"

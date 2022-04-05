@@ -42,11 +42,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "OPENSIT_ENV=preview gatsby build",
-    "develop": "OPENSIT_ENV=preview gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "OPENSIT_ENV=preview gatsby serve",
+    "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "repository": {
