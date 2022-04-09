@@ -11,23 +11,24 @@ const AboutPage = ({ data }) => {
     <Seo title="OpenSIT: Feedback" />
     <div className="insideTrack-container">
       <h3>Feedback</h3>
-      <p className="col-lg-6 col-sm-12">We love to hear back from you. If there is anything where we can improve, or information displayed wrong on the site, please let us know!</p>
+      <p className="row g-0 col-lg-6 col-sm-12">We love to hear back from you. If there is anything where we can improve, or information displayed wrong on the site, please let us know!</p>
       <Form name="feedback" method="POST" data-netlify="true">
-        <Form.Group controlId="formBasicEmail" className="col-lg-8 col-sm-12">
+        <Form.Group controlId="formBasicEmail" className="row g-0 col-lg-8 col-sm-12">
           <Form.Label>Your Name: </Form.Label>
-          <Form.Control type="text" placeholder="Enter name" sm={4} />
+          <Form.Control type="text" name="name" placeholder="Enter name" sm={4} />
           
           <Form.Label>Your Email: </Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" name="email" placeholder="Enter email" />
           <Form.Text className="text-muted">
             Only in case we should get back to you!
           </Form.Text>
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1" className="col-lg-8 col-sm-12">
+        <Form.Group controlId="exampleForm.ControlTextarea1" className="row g-0 col-lg-8 col-sm-12">
           <Form.Label>Message: </Form.Label>
-          <Form.Control as="textarea" rows={5} />
+          <Form.Control as="textarea" name="feedback-text" rows={5} />
         </Form.Group>
         <Button type="submit">Send</Button>
+        <input type="hidden" name="form-name" value="feedback" />
       </Form>
     </div>
   </Layout>
