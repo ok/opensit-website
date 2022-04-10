@@ -24,7 +24,7 @@
     "gatsby-source-graphql": "^4.9.1",
     "gatsby-transformer-sharp": "^4.9.0",
     "jquery": "^3.6.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-bootstrap": "1.6.4",
