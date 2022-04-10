@@ -40,6 +40,10 @@ body {
     padding-bottom: 1.45rem;
 }
 
+.form-hidden {
+    display: none;
+}
+
 .element-sticky {
     position: sticky; 
     top: 0px;
