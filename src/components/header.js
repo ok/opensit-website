@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Nav, Navbar } from 'react-bootstrap';
-import { FaTwitter } from 'react-icons/fa';
+import { FaTwitter, FaComment } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const Header = ({ siteTitle }) => (
@@ -15,6 +15,9 @@ const Header = ({ siteTitle }) => (
         <Nav.Link href="/about" className="text-light">About</Nav.Link>
         <Nav.Link href="/imprint" className="text-light">Imprint</Nav.Link>
         <Nav.Link href="/privacy" className="text-light">Privacy</Nav.Link>
+        <IconContext.Provider value={{ className: "big-icon feedback-icon" }}>
+          <Nav.Link href="/feedback" className="text-secondary mr-auto"><FaComment/></Nav.Link>
+        </IconContext.Provider>
         <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
           <Nav.Link href="https://twitter.com/opensitnet" target="_blank" className="text-secondary mr-auto"><FaTwitter/></Nav.Link>
         </IconContext.Provider>

@@ -30,13 +30,13 @@ const InsideTrackPage = ({ data }) => {
         </div>
         <div>
           <h4>{insideTrack.name}</h4>
-          <IconContext.Provider value={{ className: "big-icon twitter-icon" }}>
+          <IconContext.Provider value={{ className: "sit-icon twitter-icon" }}>
             {insideTrack.twitterId !== null && insideTrack.twitterId.length !== 0 && (<a href={`https://twitter.com/`+insideTrack.twitterId} aria-label="Link to Twitter"><FaTwitter/></a>)}
           </IconContext.Provider>
-          <IconContext.Provider value={{ className: "big-icon youtube-icon" }}>
+          <IconContext.Provider value={{ className: "sit-icon youtube-icon" }}>
             {insideTrack.youTubeUrl !== null && insideTrack.youTubeUrl.length !== 0 && (<a href={insideTrack.youTubeUrl} aria-label="Link to YouTube"><FaYoutube/></a>)}
           </IconContext.Provider>
-          <IconContext.Provider value={{ className: "big-icon link-icon" }}>
+          <IconContext.Provider value={{ className: "sit-icon link-icon" }}>
             {insideTrack.websiteUrl !== null && insideTrack.websiteUrl.length !== 0 && (<a href={insideTrack.websiteUrl} aria-label="Link to website"><FaLink/></a>)}
           </IconContext.Provider>
           <a href={`https://twitter.com/hashtag/${insideTrack.hashtag}`}>#{insideTrack.hashtag}</a>

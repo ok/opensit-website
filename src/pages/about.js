@@ -28,16 +28,16 @@ const AboutPage = ({ data }) => {
       <p>All listed session content is only available thanks to the many organisers of SAP Inside Tracks around the world, who are organising the professional full day events with 50-150 participants, while having a regular job in the SAP ecosystem. This site wouldn't exist without all of you.</p>
       <p>The site code is <a href="https://github.com/ok/opensit" target="_blank" rel="noopener noreferrer">available on github</a> and has been built using <a href="https://jamstack.wtf/" target="_blank" rel="noopener noreferrer">JAMstack principles</a>. Modern web development tools enable the building of highly scalable web sites with fairly low effort at no cost. <a href="https://opensit.net">opensit.net</a> is build using these freely available frameworks and services:</p>
       <div className="mb-2">
-        <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/gatsbyjs-logo.png" placeholder="blurred" width={250} aria-label="Gatsby logo" /></a>
+        <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/gatsbyjs-logo.png" alt="Gatsby logo" placeholder="blurred" width={250} aria-label="Gatsby logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/github-logo.png" placeholder="blurred" width={250} aria-label="Github logo" /></a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/github-logo.png" alt="Github logo" placeholder="blurred" width={250} aria-label="Github logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://graphcms.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/graphcms-logo.png" placeholder="blurred" width={250} aria-label="GraphCMS logo" /></a>
+        <a href="https://graphcms.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/graphcms-logo.png" alt="GraphCMS logo" placeholder="blurred" width={250} aria-label="GraphCMS logo" /></a>
       </div>
       <div className="mb-2">
-        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/netlify-logo.png" placeholder="blurred" width={250} aria-label="Netlify logo" /></a>
+        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer"><StaticImage src="../images/netlify-logo.png" alt="Netlify logo" placeholder="blurred" width={250} aria-label="Netlify logo" /></a>
       </div>
       <p></p>
       
