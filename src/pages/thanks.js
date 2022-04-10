@@ -14,7 +14,7 @@ const ThanksPage = ({ data }) => {
       <h3>Feedback</h3>
       <div className="row justify-content-center align-items-center" style={{marginTop: `3rem`,}}>
         <div className="col col-lg-3">
-          <StaticImage src="../images/thanks.gif" alt="Thanks a lot!"/>
+          <StaticImage src="../images/thanks.png" alt="Thanks a lot!"/>
         </div>
         <div className="col col-lg-5">
           <h3>Thanks a lot for your feedback.</h3>
